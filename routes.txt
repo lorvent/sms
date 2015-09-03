@@ -1,3 +1,9 @@
+main URL: http://sms.mrakodol.info
+
+Ex: to refresh a token
+http://sms.mrakodol.info/api/refresh/1x7z7z7z7z
+
+
 | Host | URI                                        | Name | Action  | Protected| Version(s) | Scope(s) |
 | -----|--------------------------------------------|------|---------|----------|------------|-----------|
 |      | POST /api/register                         |      | Closure | No| v1         |          |
