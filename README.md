@@ -1,6 +1,6 @@
 FORMAT: 1A
 
-# APIBlueprint
+# ALIBlueprint
 
 # AppHttpControllersApiAuthController
 
@@ -36,31 +36,6 @@ FORMAT: 1A
                 "error": "could_not_create_token"
             }
 
-## Register to system [POST /register]
-
-
-+ Request (application/json)
-    + Body
-
-            {
-                "email": "foo",
-                "password": "bar"
-            }
-
-+ Response 200 (application/json)
-    + Body
-
-            {
-                "user": "user_object"
-            }
-
-+ Response 500 (application/json)
-    + Body
-
-            {
-                "error": "not_send_all_data"
-            }
-
 ## Refresh token [GET /refresh]
 
 
@@ -78,11 +53,42 @@ FORMAT: 1A
                 "token": "token"
             }
 
-+ Response 401 (application/json)
++ Response 500 (application/json)
     + Body
 
             {
                 "error": "could_not_create_token"
+            }
+
+## Get role for authenticated user [GET /role]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "role": "role"
+            }
+
++ Response 400 (application/json)
+    + Body
+
+            {
+                "error": "no_role"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
             }
 
 # AppHttpControllersApiGeneralController
