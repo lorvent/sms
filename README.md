@@ -875,6 +875,71 @@ Get all children for parent
                 "error": "not_valid_data"
             }
 
+## Exams for teacher group [GET /parent/exams]
+Get all exams for teacher group
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "exams": [
+                    {
+                        "id": 1,
+                        "title": "This is title of exam",
+                        "subject": "English",
+                        "date": "2015-06-08"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Notices for teacher group [GET /parent/notices]
+Get all notices for teacher group
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "notice": [
+                    {
+                        "id": 1,
+                        "title": "This is title of notice",
+                        "subject": "English",
+                        "description": "This is description of notice",
+                        "date": "2015-02-02"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
 # AppHttpControllersApiStudentController
 
 ## Timetable for student [GET /student/timetable]
@@ -1002,6 +1067,71 @@ Get all marks for student between two dates and subject
                         "mark_type": "Oral",
                         "mark_value": "A+",
                         "exam": "Exam 1"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Exams for teacher group [GET /student/exams]
+Get all exams for teacher group
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "exams": [
+                    {
+                        "id": 1,
+                        "title": "This is title of exam",
+                        "subject": "English",
+                        "date": "2015-06-08"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Notices for teacher group [GET /student/notices]
+Get all notices for teacher group
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "notice": [
+                    {
+                        "id": 1,
+                        "title": "This is title of notice",
+                        "subject": "English",
+                        "description": "This is description of notice",
+                        "date": "2015-02-02"
                     }
                 ]
             }
@@ -1282,7 +1412,7 @@ Get all exams for teacher group
     + Body
 
             {
-                "notice": [
+                "exams": [
                     {
                         "id": 1,
                         "title": "This is title of exam",
@@ -1585,7 +1715,7 @@ Get all students for teacher group
     + Body
 
             {
-                "notice": [
+                "students": [
                     {
                         "id": 1,
                         "student_name": "Student Name"
