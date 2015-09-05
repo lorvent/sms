@@ -95,6 +95,7 @@ FORMAT: 1A
 
 ## School year for user [GET /school_years]
 Get all school years with current school year name and id and other school years that he/she can select.
+This method use all roles because all data(students, sections, marks, behaviors,semesters,attendances) are depend on school year
 
 + Request (application/json)
     + Body
@@ -118,6 +119,7 @@ Get all school years with current school year name and id and other school years
 
 ## Behaviors [GET /behaviors]
 Get all behaviors
+This list use teacher to put behavior to student
 
 + Request (application/json)
     + Body
@@ -142,6 +144,7 @@ Get all behaviors
 
 ## Books [GET /books]
 Get all books
+This method use all roles to select which book they like to issue
 
 + Request (application/json)
     + Body
@@ -172,6 +175,7 @@ Get all books
 
 ## Directions [GET /directions]
 Get all directions
+This is list of all directions of school mostly is for admin who create groups of students
 
 + Request (application/json)
     + Body
@@ -198,6 +202,7 @@ Get all directions
 
 ## Dormitories [GET /dormitories]
 Get all dormitories
+Method for admin to list all dormitories in school
 
 + Request (application/json)
     + Body
@@ -222,6 +227,7 @@ Get all dormitories
 
 ## Dormitory rooms [GET /dormitory_rooms]
 Get all dormitory rooms
+Method for admin to list all dormitory rooms in school
 
 + Request (application/json)
     + Body
@@ -248,6 +254,7 @@ Get all dormitory rooms
 
 ## Dormitory beds [GET /dormitory_beds]
 Get all dormitory beds
+Method for admin to list all dormitory beds and know which student is in which room in school
 
 + Request (application/json)
     + Body
@@ -276,6 +283,7 @@ Get all dormitory beds
 
 ## Mark types [GET /mark_types]
 Get all mark types
+Teachers need this to choose which is mark type
 
 + Request (application/json)
     + Body
@@ -300,6 +308,7 @@ Get all mark types
 
 ## Mark values [GET /mark_values]
 Get all mark values
+Teachers need this to choose which is mark value
 
 + Request (application/json)
     + Body
@@ -324,6 +333,7 @@ Get all mark values
 
 ## Notice types [GET /notice_types]
 Get all notice types
+Teachers need this to choose which is notice type
 
 + Request (application/json)
     + Body
@@ -348,6 +358,7 @@ Get all notice types
 
 ## Notifications [GET /notifications]
 Get all notifications
+All users get all they notification
 
 + Request (application/json)
     + Body
@@ -371,6 +382,7 @@ Get all notifications
 
 ## Sections [GET /sections]
 Get all sections
+Admin role to get all sections
 
 + Request (application/json)
     + Body
@@ -405,6 +417,7 @@ Get all sections
 
 ## Sections [GET /semesters]
 Get all semesters
+Admin list of all semesters
 
 + Request (application/json)
     + Body
@@ -435,13 +448,14 @@ Get all semesters
 
 ## Subjects [GET /subjects]
 Get all subjects for selected direction
+This used admin for select all subject for selected direction to can add teacher to subject on selected school year
 
 + Request (application/json)
     + Body
 
             {
                 "token": "foo",
-                "direction": "1"
+                "direction_id": "1"
             }
 
 + Response 200 (application/json)
@@ -464,7 +478,7 @@ Get all subjects for selected direction
             }
 
 ## Transportations [GET /transportations]
-Get all transportations
+List all transportations used for all roles
 
 + Request (application/json)
     + Body
@@ -486,7 +500,7 @@ Get all transportations
             ]
 
 ## Transportation directions [GET /transportation_directions]
-Get all transportation directions for selected transportation
+List all transportation directions for selected transportation used for all roles
 
 + Request (application/json)
     + Body
@@ -514,7 +528,7 @@ Get all transportation directions for selected transportation
             }
 
 ## Messages [GET /messages]
-Get all messages
+Get all messages used for all roles to get user messages
 
 + Request (application/json)
     + Body
@@ -551,7 +565,7 @@ Get all messages
                 }
             ]
 
-## Send message to user [POST /send_message]
+## Send message to user, used for all roles to send user messages [POST /send_message]
 Send message to user or replay to message. If send parent_message_id greater then 0 than it's replay to message, if 0 then is new message
 
 + Request (application/json)
@@ -580,7 +594,7 @@ Send message to user or replay to message. If send parent_message_id greater the
             }
 
 ## Users [GET /users]
-Get all users
+Get all users, all role can use it to send message
 
 + Request (application/json)
     + Body
@@ -601,7 +615,7 @@ Get all users
             ]
 
 ## Reserve book [POST /reserve_book]
-Reserve book from user
+Reserve book from user, all role can reseve book
 
 + Request (application/json)
     + Body
@@ -626,7 +640,7 @@ Reserve book from user
             }
 
 ## Payments for user [GET /payments]
-Get all payments for user
+Get all payments for user, student select there payment and parent select for there students sending user_id of that student
 
 + Request (application/json)
     + Body
@@ -656,7 +670,7 @@ Get all payments for user
                 "error": "not_valid_data"
             }
 
-## Get student for user and school year [GET /student]
+## Get student for user and school year, parent use it for there students [GET /student]
 
 
 + Request (application/json)
@@ -875,8 +889,8 @@ Get all children for parent
                 "error": "not_valid_data"
             }
 
-## Exams for teacher group [GET /parent/exams]
-Get all exams for teacher group
+## Exams for student [GET /parent/exams]
+Get all exams for student
 
 + Request (application/json)
     + Body
@@ -907,8 +921,8 @@ Get all exams for teacher group
                 "error": "not_valid_data"
             }
 
-## Notices for teacher group [GET /parent/notices]
-Get all notices for teacher group
+## Notices for student [GET /parent/notices]
+Get all notices for student
 
 + Request (application/json)
     + Body
@@ -928,6 +942,40 @@ Get all notices for teacher group
                         "title": "This is title of notice",
                         "subject": "English",
                         "description": "This is description of notice",
+                        "date": "2015-02-02"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Dairies for student [GET /parent/dairy]
+Get all dairies for student
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "dairies": [
+                    {
+                        "id": 1,
+                        "title": "This is title of notice",
+                        "subject": "English",
+                        "description": "This is description of notice",
+                        "hour": "2",
                         "date": "2015-02-02"
                     }
                 ]
@@ -1131,6 +1179,40 @@ Get all notices for teacher group
                         "title": "This is title of notice",
                         "subject": "English",
                         "description": "This is description of notice",
+                        "date": "2015-02-02"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Dairies for student [GET /student/dairy]
+Get all dairies for student
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "dairies": [
+                    {
+                        "id": 1,
+                        "title": "This is title of notice",
+                        "subject": "English",
+                        "description": "This is description of notice",
+                        "hour": "2",
                         "date": "2015-02-02"
                     }
                 ]
@@ -1750,6 +1832,94 @@ Get all borrowed books
                     "get": "2015-08-10"
                 }
             ]
+
+## Dairies for student [GET /student/dairy]
+Get all dairies for student
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_group_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "diaries": [
+                    {
+                        "id": 1,
+                        "title": "This is title of notice",
+                        "subject": "English",
+                        "description": "This is description of notice",
+                        "hour": "2",
+                        "date": "2015-02-02"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Post dairy for subject, hour and date [POST /teacher/post_dairy]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "subject_id": "1",
+                "title": "This is title",
+                "date": "2015-06-08",
+                "hour": "1",
+                "description": "This is description"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "success": "success"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Delete dairy [POST /teacher/delete_dairy]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "dairy_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "success": "success"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
 
 # AppHttpControllersApiLibrarianController
 
