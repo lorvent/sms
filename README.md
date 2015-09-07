@@ -1,8 +1,9 @@
 FORMAT: 1A
 
-# ALIBlueprint
+# SMS_API
 
-# AppHttpControllersApiAuthController
+# Auth
+Authentication related endpoints
 
 ## Login to system [POST /login]
 
@@ -91,7 +92,8 @@ FORMAT: 1A
                 "error": "not_valid_data"
             }
 
-# AppHttpControllersApiGeneralController
+# General
+General endpoints which can be accessed by any user group
 
 ## School year for user [GET /school_years]
 Get all school years with current school year name and id and other school years that he/she can select.
@@ -701,9 +703,10 @@ Get all payments for user, student select there payment and parent select for th
                 "error": "not_valid_data"
             }
 
-# AppHttpControllersApiParentController
+# Parent [/parent]
+Parent endpoints, can be accessed only with role "parent"
 
-## Timetable for student [GET /student/timetable]
+## Timetable for student [GET /parent/student/timetable]
 Get timetable for student with getting his token and role student
 This method return array of array: first array has number of hour, first subarray is array for number of day and
 in that array have objects that represent subject and teacher that teaches
@@ -988,7 +991,8 @@ Get all dairies for student
                 "error": "not_valid_data"
             }
 
-# AppHttpControllersApiStudentController
+# Student [/student]
+Student endpoints, can be accessed only with role "student"
 
 ## Timetable for student [GET /student/timetable]
 Get timetable for student with getting his token and role student
@@ -1225,7 +1229,8 @@ Get all dairies for student
                 "error": "not_valid_data"
             }
 
-# AppHttpControllersApiTeacherController
+# Teacher [/teacher]
+Teacher endpoints, can be accessed only with role "teacher"
 
 ## Timetable for teacher [GET /teacher/timetable]
 Get timetable for teacher with getting his token and role teacher
@@ -1833,7 +1838,7 @@ Get all borrowed books
                 }
             ]
 
-## Dairies for student [GET /student/dairy]
+## Dairies for student [GET /teacher/student/dairy]
 Get all dairies for student
 
 + Request (application/json)
@@ -1921,7 +1926,8 @@ Get all dairies for student
                 "error": "not_valid_data"
             }
 
-# AppHttpControllersApiLibrarianController
+# Librarian [/librarian]
+Librarian endpoints, can be accessed only with role "librarian"
 
 ## Borrowed books [GET /librarian/borrowed_books]
 Get all borrowed books
