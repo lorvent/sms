@@ -1,6 +1,6 @@
 FORMAT: 1A
 
-# SMS_API
+# API_SMS
 
 # Auth
 Authentication related endpoints
@@ -20,7 +20,22 @@ Authentication related endpoints
     + Body
 
             {
-                "token": "token"
+                "token": "token",
+                "user": {
+                    "id": 4,
+                    "first_name": "Teacher",
+                    "last_name": "Doe",
+                    "email": "teacher@sms.com",
+                    "last_login": "2015-09-07 19:27:08",
+                    "address": "Address",
+                    "picture": "image.jpg",
+                    "mobile": "+545154515",
+                    "phone": "+545154515",
+                    "gender": 0,
+                    "birth_date": "2015-06-02",
+                    "birth_city": "Banja Luka"
+                },
+                "role": "teacher"
             }
 
 + Response 401 (application/json)
@@ -59,37 +74,6 @@ Authentication related endpoints
 
             {
                 "error": "could_not_create_token"
-            }
-
-## Get role for authenticated user [GET /role]
-
-
-+ Request (application/json)
-    + Body
-
-            {
-                "token": "foo"
-            }
-
-+ Response 200 (application/json)
-    + Body
-
-            {
-                "role": "role"
-            }
-
-+ Response 400 (application/json)
-    + Body
-
-            {
-                "error": "no_role"
-            }
-
-+ Response 500 (application/json)
-    + Body
-
-            {
-                "error": "not_valid_data"
             }
 
 # General
@@ -702,6 +686,72 @@ Get all payments for user, student select there payment and parent select for th
             {
                 "error": "not_valid_data"
             }
+
+## Get search books [GET /book_search]
+
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "search": "Test book"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            [
+                {
+                    "id": "1",
+                    "subject": "History",
+                    "title": "History of world 1",
+                    "author": "Group of authors",
+                    "year": "2015"
+                },
+                {
+                    "id": "2",
+                    "subject": "English",
+                    "title": "English 2",
+                    "author": "Group of authors",
+                    "year": "2015"
+                }
+            ]
+
+## Get search users [GET /user_search]
+
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "search": "Test user"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            [
+                {
+                    "id": "1",
+                    "name": "Name Surname"
+                }
+            ]
 
 # Parent [/parent]
 Parent endpoints, can be accessed only with role "parent"

@@ -8,7 +8,6 @@ http://sms.mrakodol.info/api/refresh/1x7z7z7z7z
 +------+--------------------------------------------+------+---------+-----------+------------+----------+
 |      | POST /api/login                            |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/refresh                      |      | Closure | No        | v1         |          |
-|      | GET|HEAD /api/role                         |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/school_years                 |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/behaviors                    |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/books                        |      | Closure | No        | v1         |          |
@@ -30,6 +29,8 @@ http://sms.mrakodol.info/api/refresh/1x7z7z7z7z
 |      | POST /api/reserve_book                     |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/payments                     |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/student                      |      | Closure | No        | v1         |          |
+|      | GET|HEAD /api/book_search                  |      | Closure | No        | v1         |          |
+|      | GET|HEAD /api/user_search                  |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/student/timetable            |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/student/borrowed_books       |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/student/marks                |      | Closure | No        | v1         |          |
