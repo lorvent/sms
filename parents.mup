@@ -3,7 +3,11 @@
   "id": 1,
   "formatVersion": 2,
   "ideas": {
-    "1": {
+    "11": {
+      "title": "failure",
+      "id": 7
+    },
+    "21": {
       "title": "success",
       "id": 6,
       "ideas": {
@@ -12,17 +16,49 @@
           "id": 8,
           "ideas": {
             "1": {
-              "title": "get calendar",
+              "title": "timetable",
               "id": 9,
               "ideas": {}
+            },
+            "2": {
+              "title": "attendances",
+              "id": 11
+            },
+            "3": {
+              "title": "borrowed books",
+              "id": 13
+            },
+            "4": {
+              "title": "marks",
+              "id": 14
+            },
+            "5": {
+              "title": "invoices",
+              "id": 15
+            },
+            "6": {
+              "title": "exams",
+              "id": 16
+            },
+            "7": {
+              "title": "notices",
+              "id": 17
+            },
+            "8": {
+              "title": "dairy",
+              "id": 18
             }
           }
         }
+      },
+      "attr": {
+        "position": [
+          19.5,
+          100,
+          1
+        ],
+        "style": {}
       }
-    },
-    "11": {
-      "title": "failure",
-      "id": 7
     }
   },
   "attr": {
