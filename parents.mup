@@ -1,0 +1,53 @@
+{
+  "title": "Authenticate",
+  "id": 1,
+  "formatVersion": 2,
+  "ideas": {
+    "1": {
+      "title": "success",
+      "id": 6,
+      "ideas": {
+        "1": {
+          "title": "get children",
+          "id": 8,
+          "ideas": {
+            "1": {
+              "title": "get calendar",
+              "id": 9,
+              "ideas": {}
+            }
+          }
+        }
+      }
+    },
+    "11": {
+      "title": "failure",
+      "id": 7
+    }
+  },
+  "attr": {
+    "storyboards": [
+      "Storyboard 1"
+    ],
+    "style": {
+      "background": "#0000ff"
+    },
+    "measurements-config": [
+      "success"
+    ],
+    "storyboard-scenes": [
+      {
+        "storyboards": {
+          "Storyboard 1": 1
+        }
+      },
+      {
+        "storyboards": {
+          "Storyboard 1": 2
+        },
+        "type": "with-children"
+      }
+    ]
+  },
+  "links": []
+}
