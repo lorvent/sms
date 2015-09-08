@@ -756,7 +756,7 @@ Get all payments for user, student select there payment and parent select for th
 # Parent [/parent]
 Parent endpoints, can be accessed only with role "parent"
 
-## Timetable for student [GET /parent/student/timetable]
+## Timetable for student [GET /parent/timetable]
 Get timetable for student with getting his token and role student
 This method return array of array: first array has number of hour, first subarray is array for number of day and
 in that array have objects that represent subject and teacher that teaches
@@ -765,7 +765,7 @@ in that array have objects that represent subject and teacher that teaches
     + Body
 
             {
-                "token": "foo"
+                "token": "foo", 'student_user_id':'5',"school_year": "1"
             }
 
 + Response 200 (application/json)
@@ -1053,7 +1053,7 @@ in that array have objects that represent subject and teacher that teaches
     + Body
 
             {
-                "token": "foo"
+                "token": "foo","school_year": "1"
             }
 
 + Response 200 (application/json)
