@@ -148,14 +148,24 @@ This method use all roles to select which book they like to issue
                     "subject": "History",
                     "title": "History of world 1",
                     "author": "Group of authors",
-                    "year": "2015"
+                    "year": "2015",
+                    "internal": "2015/15",
+                    "publisher": "Book publisher",
+                    "version": "0.2",
+                    "issued": 2,
+                    "quantity": 2
                 },
                 {
                     "id": "2",
                     "subject": "English",
                     "title": "English 2",
                     "author": "Group of authors",
-                    "year": "2015"
+                    "year": "2015",
+                    "internal": "2015/15",
+                    "publisher": "Book publisher 2",
+                    "version": "0.1",
+                    "issued": 2,
+                    "quantity": 2
                 }
             ]
 
@@ -714,14 +724,24 @@ Get all payments for user, student select there payment and parent select for th
                     "subject": "History",
                     "title": "History of world 1",
                     "author": "Group of authors",
-                    "year": "2015"
+                    "year": "2015",
+                    "internal": "2015/15",
+                    "publisher": "Book publisher",
+                    "version": "0.2",
+                    "issued": 2,
+                    "quantity": 2
                 },
                 {
                     "id": "2",
                     "subject": "English",
                     "title": "English 2",
                     "author": "Group of authors",
-                    "year": "2015"
+                    "year": "2015",
+                    "internal": "2015/15",
+                    "publisher": "Book publisher",
+                    "version": "0.2",
+                    "issued": 1,
+                    "quantity": 2
                 }
             ]
 
@@ -753,6 +773,245 @@ Get all payments for user, student select there payment and parent select for th
                 }
             ]
 
+# Student [/student]
+Student endpoints, can be accessed only with role "student"
+
+## Timetable for student [GET /student/timetable]
+Get timetable for student with getting his token and role student
+This method return array of array: first array has number of hour, first subarray is array for number of day and
+in that array have objects that represent subject and teacher that teaches
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "school_year": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            [
+                {
+                    "1": {
+                        "1": {
+                            "id": 10,
+                            "subject": "English",
+                            "teacher": "Test teacher 1"
+                        },
+                        "2": {
+                            "id": 11,
+                            "subject": "Serbian",
+                            "teacher": "Test teacher 2"
+                        }
+                    },
+                    "2": {
+                        "1": {
+                            "id": 12,
+                            "subject": "History",
+                            "teacher": "Test teacher 2"
+                        },
+                        "2": {
+                            "id": 13,
+                            "subject": "English",
+                            "teacher": "Test teacher 1"
+                        }
+                    }
+                }
+            ]
+
+## Borrowed books [GET /student/borrowed_books]
+Get all borrowed books
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            [
+                {
+                    "title": "Book for mathematics",
+                    "author": "Group of authors",
+                    "get": "2015-08-10"
+                }
+            ]
+
+## Attendances for student and dates [GET /student/attendances]
+Get all attendances for student between two dates
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1",
+                "start_date": "2015-10-12",
+                "end_date": "2015-10-12"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "attendance": [
+                    {
+                        "id": 1,
+                        "subject": "Subject Name",
+                        "hour": "2",
+                        "justified": "yes",
+                        "date": "2015-06-05"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Marks for student between two dates and subject [GET /student/marks]
+Get all marks for student between two dates and subject
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1",
+                "subject_id": "1",
+                "start_date": "2015-10-12",
+                "end_date": "2015-10-13"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "marks": [
+                    {
+                        "id": 1,
+                        "subject": "Subject Name",
+                        "mark_type": "Oral",
+                        "mark_value": "A+",
+                        "exam": "Exam 1"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Exams for teacher group [GET /student/exams]
+Get all exams for teacher group
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "exams": [
+                    {
+                        "id": 1,
+                        "title": "This is title of exam",
+                        "subject": "English",
+                        "date": "2015-06-08"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Notices for teacher group [GET /student/notices]
+Get all notices for teacher group
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "notice": [
+                    {
+                        "id": 1,
+                        "title": "This is title of notice",
+                        "subject": "English",
+                        "description": "This is description of notice",
+                        "date": "2015-02-02"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Dairies for student [GET /student/dairy]
+Get all dairies for student
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "dairies": [
+                    {
+                        "id": 1,
+                        "title": "This is title of notice",
+                        "subject": "English",
+                        "description": "This is description of notice",
+                        "hour": "2",
+                        "date": "2015-02-02"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
 # Parent [/parent]
 Parent endpoints, can be accessed only with role "parent"
 
@@ -765,7 +1024,9 @@ in that array have objects that represent subject and teacher that teaches
     + Body
 
             {
-                "token": "foo", 'student_user_id':'5',"school_year": "1"
+                "token": "foo",
+                "student_user_id": "5",
+                "school_year": "1"
             }
 
 + Response 200 (application/json)
@@ -1008,244 +1269,6 @@ Get all notices for student
             }
 
 ## Dairies for student [GET /parent/dairy]
-Get all dairies for student
-
-+ Request (application/json)
-    + Body
-
-            {
-                "token": "foo",
-                "student_id": "1"
-            }
-
-+ Response 200 (application/json)
-    + Body
-
-            {
-                "dairies": [
-                    {
-                        "id": 1,
-                        "title": "This is title of notice",
-                        "subject": "English",
-                        "description": "This is description of notice",
-                        "hour": "2",
-                        "date": "2015-02-02"
-                    }
-                ]
-            }
-
-+ Response 500 (application/json)
-    + Body
-
-            {
-                "error": "not_valid_data"
-            }
-
-# Student [/student]
-Student endpoints, can be accessed only with role "student"
-
-## Timetable for student [GET /student/timetable]
-Get timetable for student with getting his token and role student
-This method return array of array: first array has number of hour, first subarray is array for number of day and
-in that array have objects that represent subject and teacher that teaches
-
-+ Request (application/json)
-    + Body
-
-            {
-                "token": "foo","school_year": "1"
-            }
-
-+ Response 200 (application/json)
-    + Body
-
-            [
-                {
-                    "1": {
-                        "1": {
-                            "id": 10,
-                            "subject": "English",
-                            "teacher": "Test teacher 1"
-                        },
-                        "2": {
-                            "id": 11,
-                            "subject": "Serbian",
-                            "teacher": "Test teacher 2"
-                        }
-                    },
-                    "2": {
-                        "1": {
-                            "id": 12,
-                            "subject": "History",
-                            "teacher": "Test teacher 2"
-                        },
-                        "2": {
-                            "id": 13,
-                            "subject": "English",
-                            "teacher": "Test teacher 1"
-                        }
-                    }
-                }
-            ]
-
-## Borrowed books [GET /student/borrowed_books]
-Get all borrowed books
-
-+ Request (application/json)
-    + Body
-
-            {
-                "token": "foo"
-            }
-
-+ Response 200 (application/json)
-    + Body
-
-            [
-                {
-                    "title": "Book for mathematics",
-                    "author": "Group of authors",
-                    "get": "2015-08-10"
-                }
-            ]
-
-## Attendances for student and dates [GET /student/attendances]
-Get all attendances for student between two dates
-
-+ Request (application/json)
-    + Body
-
-            {
-                "token": "foo",
-                "student_id": "1",
-                "start_date": "2015-10-12",
-                "end_date": "2015-10-12"
-            }
-
-+ Response 200 (application/json)
-    + Body
-
-            {
-                "attendance": [
-                    {
-                        "id": 1,
-                        "subject": "Subject Name",
-                        "hour": "2",
-                        "justified": "yes",
-                        "date": "2015-06-05"
-                    }
-                ]
-            }
-
-+ Response 500 (application/json)
-    + Body
-
-            {
-                "error": "not_valid_data"
-            }
-
-## Marks for student between two dates and subject [GET /student/marks]
-Get all marks for student between two dates and subject
-
-+ Request (application/json)
-    + Body
-
-            {
-                "token": "foo",
-                "student_id": "1",
-                "subject_id": "1",
-                "start_date": "2015-10-12",
-                "end_date": "2015-10-13"
-            }
-
-+ Response 200 (application/json)
-    + Body
-
-            {
-                "marks": [
-                    {
-                        "id": 1,
-                        "subject": "Subject Name",
-                        "mark_type": "Oral",
-                        "mark_value": "A+",
-                        "exam": "Exam 1"
-                    }
-                ]
-            }
-
-+ Response 500 (application/json)
-    + Body
-
-            {
-                "error": "not_valid_data"
-            }
-
-## Exams for teacher group [GET /student/exams]
-Get all exams for teacher group
-
-+ Request (application/json)
-    + Body
-
-            {
-                "token": "foo",
-                "student_id": "1"
-            }
-
-+ Response 200 (application/json)
-    + Body
-
-            {
-                "exams": [
-                    {
-                        "id": 1,
-                        "title": "This is title of exam",
-                        "subject": "English",
-                        "date": "2015-06-08"
-                    }
-                ]
-            }
-
-+ Response 500 (application/json)
-    + Body
-
-            {
-                "error": "not_valid_data"
-            }
-
-## Notices for teacher group [GET /student/notices]
-Get all notices for teacher group
-
-+ Request (application/json)
-    + Body
-
-            {
-                "token": "foo",
-                "student_id": "1"
-            }
-
-+ Response 200 (application/json)
-    + Body
-
-            {
-                "notice": [
-                    {
-                        "id": 1,
-                        "title": "This is title of notice",
-                        "subject": "English",
-                        "description": "This is description of notice",
-                        "date": "2015-02-02"
-                    }
-                ]
-            }
-
-+ Response 500 (application/json)
-    + Body
-
-            {
-                "error": "not_valid_data"
-            }
-
-## Dairies for student [GET /student/dairy]
 Get all dairies for student
 
 + Request (application/json)
@@ -2012,7 +2035,10 @@ Get all borrowed books
                 "title": "Title of book",
                 "author": "This is author",
                 "year": "2015",
-                "quantity": "5"
+                "quantity": "5",
+                "internal": "2015/15",
+                "publisher": "Book publisher 2",
+                "version": "0.1"
             }
 
 + Response 200 (application/json)
