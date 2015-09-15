@@ -2023,7 +2023,7 @@ Get all borrowed books
                 }
             ]
 
-## Post new book [POST /librarian/post_book]
+## Post new book [POST /librarian/add_book]
 
 
 + Request (application/json)
@@ -2064,6 +2064,39 @@ Get all borrowed books
             {
                 "token": "foo",
                 "book_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "success": "success"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Edit book [POST /librarian/edit_book]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "book_id": "1",
+                "subject_id": "1",
+                "title": "Title of book",
+                "author": "This is author",
+                "year": "2015",
+                "quantity": "5",
+                "internal": "2015/15",
+                "publisher": "Book publisher 2",
+                "version": "0.1"
             }
 
 + Response 200 (application/json)

@@ -69,7 +69,8 @@ http://sms.mrakodol.info/api/refresh/1x7z7z7z7z
 |      | POST /api/teacher/post_dairy               |      | Closure | No        | v1         |          |
 |      | POST /api/teacher/delete_dairy             |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/librarian/borrowed_books     |      | Closure | No        | v1         |          |
-|      | POST /api/librarian/post_book              |      | Closure | No        | v1         |          |
+|      | POST /api/librarian/add_book               |      | Closure | No        | v1         |          |
+|      | POST /api/librarian/edit_book              |      | Closure | No        | v1         |          |
 |      | POST /api/librarian/delete_book            |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/librarian/reserved_books     |      | Closure | No        | v1         |          |
 |      | POST /api/librarian/delete_reserved_book   |      | Closure | No        | v1         |          |

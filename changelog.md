@@ -1,6 +1,10 @@
 #ChangeLog
 
 ### 09-09-2015
+ * add method for edit book for librarian
+ * change name of method for add new book for librarian
+ 
+### 09-09-2015
  * add more fields to books to create and return values of search the books
  
 ### 07-09-2015
