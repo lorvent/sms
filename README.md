@@ -79,30 +79,6 @@ Authentication related endpoints
 # General
 General endpoints which can be accessed by any user group
 
-## School year for user [GET /school_years]
-Get all school years with current school year name and id and other school years that he/she can select.
-This method use all roles because all data(students, sections, marks, behaviors,semesters,attendances) are depend on school year
-
-+ Request (application/json)
-    + Body
-
-            {
-                "token": "foo",
-                "school_year": 1
-            }
-
-+ Response 200 (application/json)
-    + Body
-
-            {
-                "current_school_value": "2014/2015",
-                "current_school_id": 1,
-                "other_school_years": {
-                    "id": 1,
-                    "title": "2014/2015"
-                }
-            }
-
 ## Behaviors [GET /behaviors]
 Get all behaviors
 This list use teacher to put behavior to student
@@ -776,6 +752,31 @@ Get all payments for user, student select there payment and parent select for th
 # Student [/student]
 Student endpoints, can be accessed only with role "student"
 
+## School year for student [GET /student/school_years]
+Get all school years with current school year name and id and other school years that he/she can select.
+This method use all roles because all data(students, sections, marks, behaviors,semesters,attendances) are depend on school year
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": 1,
+                "school_year": 1
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "current_school_value": "2014/2015",
+                "current_school_id": 1,
+                "other_school_years": {
+                    "id": 1,
+                    "title": "2014/2015"
+                }
+            }
+
 ## Timetable for student [GET /student/timetable]
 Get timetable for student with getting his token and role student
 This method return array of array: first array has number of hour, first subarray is array for number of day and
@@ -1014,6 +1015,31 @@ Get all dairies for student
 
 # Parent [/parent]
 Parent endpoints, can be accessed only with role "parent"
+
+## School year for student [GET /parent/school_years]
+Get all school years with current school year name and id and other school years that he/she can select.
+This method use all roles because all data(students, sections, marks, behaviors,semesters,attendances) are depend on school year
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": 1,
+                "school_year": 1
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "current_school_value": "2014/2015",
+                "current_school_id": 1,
+                "other_school_years": {
+                    "id": 1,
+                    "title": "2014/2015"
+                }
+            }
 
 ## Timetable for student [GET /parent/timetable]
 Get timetable for student with getting his token and role student
@@ -1304,6 +1330,31 @@ Get all dairies for student
 
 # Teacher [/teacher]
 Teacher endpoints, can be accessed only with role "teacher"
+
+## School year for user [GET /teacher/school_years]
+Get all school years with current school year name and id and other school years that he/she can select.
+This method use all roles because all data(students, sections, marks, behaviors,semesters,attendances) are depend on school year
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "user_id": 1,
+                "school_year": 1
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "current_school_value": "2014/2015",
+                "current_school_id": 1,
+                "other_school_years": {
+                    "id": 1,
+                    "title": "2014/2015"
+                }
+            }
 
 ## Timetable for teacher [GET /teacher/timetable]
 Get timetable for teacher with getting his token and role teacher
@@ -2001,6 +2052,30 @@ Get all dairies for student
 
 # Librarian [/librarian]
 Librarian endpoints, can be accessed only with role "librarian"
+
+## School year for user [GET /librarian/school_years]
+Get all school years with current school year name and id and other school years that he/she can select.
+This method use all roles because all data(students, sections, marks, behaviors,semesters,attendances) are depend on school year
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "school_year": 1
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "current_school_value": "2014/2015",
+                "current_school_id": 1,
+                "other_school_years": {
+                    "id": 1,
+                    "title": "2014/2015"
+                }
+            }
 
 ## Borrowed books [GET /librarian/borrowed_books]
 Get all borrowed books

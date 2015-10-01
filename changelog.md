@@ -1,5 +1,8 @@
 #ChangeLog
 
+### 01-10-2015
+ * divided school year selects on roles
+
 ### 09-09-2015
  * add method for edit book for librarian
  * change name of method for add new book for librarian

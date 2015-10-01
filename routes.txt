@@ -8,7 +8,6 @@ http://sms.mrakodol.info/api/refresh/1x7z7z7z7z
 +------+--------------------------------------------+------+---------+-----------+------------+----------+
 |      | POST /api/login                            |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/refresh                      |      | Closure | No        | v1         |          |
-|      | GET|HEAD /api/school_years                 |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/behaviors                    |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/books                        |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/directions                   |      | Closure | No        | v1         |          |
@@ -32,12 +31,14 @@ http://sms.mrakodol.info/api/refresh/1x7z7z7z7z
 |      | GET|HEAD /api/book_search                  |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/user_search                  |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/student/timetable            |      | Closure | No        | v1         |          |
+|      | GET|HEAD /api/student/school_years         |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/student/borrowed_books       |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/student/marks                |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/student/attendances          |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/student/notices              |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/student/exams                |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/student/dairy                |      | Closure | No        | v1         |          |
+|      | GET|HEAD /api/parent/school_years          |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/parent/timetable             |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/parent/borrowed_books        |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/parent/marks                 |      | Closure | No        | v1         |          |
@@ -48,6 +49,7 @@ http://sms.mrakodol.info/api/refresh/1x7z7z7z7z
 |      | GET|HEAD /api/parent/exams                 |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/parent/dairy                 |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/teacher/timetable            |      | Closure | No        | v1         |          |
+|      | GET|HEAD /api/teacher/school_years         |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/teacher/timetable_group      |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/teacher/groups               |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/teacher/notices              |      | Closure | No        | v1         |          |
