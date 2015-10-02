@@ -1776,7 +1776,8 @@ Get all attendances list of hours from timetable for selected date and group
                 "date": "2015-06-08",
                 "hour": "2",
                 "note": "This is note",
-                "justified": "yes"
+                "justified": "yes",
+                "school_year_id": "1"
             }
 
 + Response 200 (application/json)
@@ -1802,6 +1803,32 @@ Get all attendances list of hours from timetable for selected date and group
             {
                 "token": "foo",
                 "attendance_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "success": "success"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Justify attendance [POST /teacher/justify_attendance]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "attendance_id": "1",
+                "justify": "no/yes/unknown"
             }
 
 + Response 200 (application/json)
@@ -1869,7 +1896,8 @@ Get all marks for teacher group between two date
                 "subject_id": "1",
                 "mark_value_id": "1",
                 "comment": "This is comment",
-                "date": "2015-06-08"
+                "date": "2015-06-08",
+                "school_year_id": "1"
             }
 
 + Response 200 (application/json)

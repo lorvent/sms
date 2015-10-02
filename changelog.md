@@ -1,5 +1,9 @@
 #ChangeLog
 
+### 02-10-2015
+ * add in marks and attendances school year
+ * add method to teacher justify_attendance
+
 ### 01-10-2015
  * divided school year selects on roles
 
