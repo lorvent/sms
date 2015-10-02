@@ -4,6 +4,7 @@
  * add in marks and attendances school year
  * add method to teacher justify_attendance
  * fixes in reservated books and add reservated books for selected user
+ * add borrowed books for user
 
 ### 01-10-2015
  * divided school year selects on roles

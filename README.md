@@ -773,6 +773,30 @@ Get all reserved books for user
                 }
             ]
 
+## Borrowed books for user [GET /borrowed_user_books]
+Get all borrowed books for user
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "user_id": 5
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            [
+                {
+                    "id": "1",
+                    "title": "Book for mathematics",
+                    "author": "Group of authors",
+                    "subject": "Mathematics",
+                    "get": "2015-08-10"
+                }
+            ]
+
 # Student [/student]
 Student endpoints, can be accessed only with role "student"
 
