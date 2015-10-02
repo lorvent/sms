@@ -787,15 +787,33 @@ Get all borrowed books for user
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "title": "Book for mathematics",
-                    "author": "Group of authors",
-                    "subject": "Mathematics",
-                    "get": "2015-08-10"
+            {
+                "books": [
+                    {
+                        "id": 12,
+                        "title": "EngLib",
+                        "author": "Ruth D. Brown",
+                        "subject": "English",
+                        "get": "2015-09-11"
+                    },
+                    {
+                        "id": 13,
+                        "title": "SciLib",
+                        "author": "Matthew D. Stewart",
+                        "subject": "Science",
+                        "get": "2015-09-11"
+                    }
+                ],
+                "user": {
+                    "id": 15,
+                    "name": "Full Name",
+                    "email": "address@sms.com",
+                    "address": "Kincheloe Road Portland",
+                    "mobile": "345376587657",
+                    "phone": "",
+                    "gender": 1
                 }
-            ]
+            }
 
 # Student [/student]
 Student endpoints, can be accessed only with role "student"
