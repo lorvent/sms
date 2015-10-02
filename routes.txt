@@ -30,6 +30,7 @@ http://sms.mrakodol.info/api/refresh/1x7z7z7z7z
 |      | GET|HEAD /api/student                      |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/book_search                  |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/user_search                  |      | Closure | No        | v1         |          |
+|      | GET|HEAD /api/reserved_user_books          |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/student/timetable            |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/student/school_years         |      | Closure | No        | v1         |          |
 |      | GET|HEAD /api/student/borrowed_books       |      | Closure | No        | v1         |          |

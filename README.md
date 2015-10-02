@@ -749,6 +749,30 @@ Get all payments for user, student select there payment and parent select for th
                 }
             ]
 
+## Reserved books for user [GET /reserved_user_books]
+Get all reserved books for user
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "user_id": 5
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            [
+                {
+                    "id": "1",
+                    "title": "Book for mathematics",
+                    "author": "Group of authors",
+                    "subject": "Mathematics",
+                    "reserved": "2015-08-10"
+                }
+            ]
+
 # Student [/student]
 Student endpoints, can be accessed only with role "student"
 
@@ -2234,6 +2258,7 @@ Get all reserved books
                     "id": "1",
                     "title": "Book for mathematics",
                     "author": "Group of authors",
+                    "subject": "Mathematics",
                     "reserved": "2015-08-10"
                 }
             ]
