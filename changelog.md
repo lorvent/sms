@@ -1,5 +1,8 @@
 #ChangeLog
 
+### 06-10-2015
+ * add subject books for selected subject
+ 
 ### 02-10-2015
  * add in marks and attendances school year
  * add method to teacher justify_attendance
