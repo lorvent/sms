@@ -1,6 +1,7 @@
 #ChangeLog
 
 ### 08-10-2015
+ * add date into returned marks 
  * add list of exams for selected subject for student and parent user
  
 ### 06-10-2015

@@ -981,7 +981,7 @@ Get all marks for student between two dates and subject
             {
                 "token": "foo",
                 "student_id": "1",
-                "subject_id": "1",
+                "subject_id": "12",
                 "start_date": "2015-10-12",
                 "end_date": "2015-10-13"
             }
@@ -996,7 +996,8 @@ Get all marks for student between two dates and subject
                         "subject": "Subject Name",
                         "mark_type": "Oral",
                         "mark_value": "A+",
-                        "exam": "Exam 1"
+                        "exam": "Exam 1",
+                        "date": "2015-06-10"
                     }
                 ]
             }
@@ -1271,7 +1272,7 @@ Get all marks for student between two dates and subject
             {
                 "token": "foo",
                 "student_id": "1",
-                "subject_id": "1",
+                "subject_id": "12",
                 "start_date": "2015-10-12",
                 "end_date": "2015-10-13"
             }
@@ -1286,7 +1287,8 @@ Get all marks for student between two dates and subject
                         "subject": "Subject Name",
                         "mark_type": "Oral",
                         "mark_value": "A+",
-                        "exam": "Exam 1"
+                        "exam": "Exam 1",
+                        "date": "2015-06-10"
                     }
                 ]
             }
