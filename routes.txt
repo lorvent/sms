@@ -43,12 +43,14 @@ No - no need token
 |      | GET|HEAD /api/student/attendances          |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/student/notices              |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/student/exams                |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/student/exam_subject         |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/student/dairy                |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/school_years          |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/timetable             |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/borrowed_books        |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/marks                 |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/attendances           |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/parent/exam_subject          |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/invoices              |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/children              |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/notices               |      | Closure | Yes       | v1         |          |

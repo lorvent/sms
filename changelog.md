@@ -1,12 +1,15 @@
 #ChangeLog
 
+### 08-10-2015
+ * add list of exams for selected subject for student and parent user
+ 
 ### 06-10-2015
  * add subject books for selected subject
  
 ### 02-10-2015
  * add in marks and attendances school year
  * add method to teacher justify_attendance
- * fixes in reservated books and add reservated books for selected user
+ * fixes in reserved books and add reserved books for selected user
  * add borrowed books for user
 
 ### 01-10-2015
