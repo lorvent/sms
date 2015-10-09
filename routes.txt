@@ -27,6 +27,7 @@ No - no need token
 |      | GET|HEAD /api/subjects                     |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/transportations              |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/transportation_directions    |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/transportations_directions   |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/messages                     |      | Closure | Yes       | v1         |          |
 |      | POST /api/send_message                     |      | Closure | Yes       | v1         |          |
 |      | POST /api/reserve_book                     |      | Closure | Yes       | v1         |          |

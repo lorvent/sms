@@ -843,6 +843,99 @@ Get all books for subject
                 }
             ]
 
+## Feedback [GET /feedback]
+Get all Feedback for user
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "feedback": {
+                    "id": 1,
+                    "title": "This is title of notice",
+                    "type": "request",
+                    "description": "This is description of notice",
+                    "date": "2015-02-02 15:32:11"
+                }
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Post feedback from user [POST /post_feedback]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "feedback_type": "request|praise|contact|error|proposal",
+                "role": "student\librarian|teacher|parent",
+                "title": "This is title",
+                "description": "This is description"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "success": "success"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Transportation [GET /transportations_directions]
+Get all transportation routes
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "transport": {
+                    "id": 1,
+                    "title": "This is title of notice",
+                    "start": "2015-02-02",
+                    "end": "",
+                    "locations": {
+                        "id": 1,
+                        "name": "San Jose",
+                        "lat": "",
+                        "lang": ""
+                    }
+                }
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
 # Student [/student]
 Student endpoints, can be accessed only with role "student"
 
@@ -1212,13 +1305,13 @@ Get all borrowed books
 + Response 200 (application/json)
     + Body
 
-            [
-                {
+            {
+                "borrowed_books": {
                     "title": "Book for mathematics",
                     "author": "Group of authors",
                     "get": "2015-08-10"
                 },
-                {
+                "0": {
                     "statusCode": 500,
                     "contentType": "application/json",
                     "body": {
@@ -1226,7 +1319,7 @@ Get all borrowed books
                     },
                     "headers": []
                 }
-            ]
+            }
 
 ## Attendances for student and dates [GET /parent/attendances]
 Get all attendances for student between two dates
@@ -1308,20 +1401,20 @@ Get all invoices for user
 
             {
                 "token": "foo",
-                "user_id": "1"
+                "student_user_id": "1"
             }
 
 + Response 200 (application/json)
     + Body
 
-            [
-                {
+            {
+                "invoices": {
                     "id": 1,
                     "amount": "10.5",
                     "title": "This is title of invoices",
                     "description": "This is description of invoices"
                 }
-            ]
+            }
 
 + Response 500 (application/json)
     + Body
@@ -1344,13 +1437,12 @@ Get all children for parent
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": 1,
+            {
+                "children": {
                     "student_name": "Student Name",
                     "student_user_id": "1"
                 }
-            ]
+            }
 
 + Response 500 (application/json)
     + Body
@@ -1483,6 +1575,32 @@ Get exams for subject and student
                         "date": "2015-02-02"
                     }
                 ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Get student id [GET /parent/student_for_user]
+Get student id for user and school year
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "user_id": "1",
+                "school_year_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "student_id": "1"
             }
 
 + Response 500 (application/json)

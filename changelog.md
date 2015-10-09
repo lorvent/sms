@@ -1,5 +1,10 @@
 #ChangeLog
 
+### 09-10-2015
+ * add method transportations_directions which return all transportation with directions 
+ * fix in invoices in parent api-change param
+ * fix some api parent methods
+ 
 ### 08-10-2015
  * add date into returned marks 
  * add list of exams for selected subject for student and parent user
