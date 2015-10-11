@@ -2029,11 +2029,13 @@ Get all attendances list of hours from timetable for selected date and group
                 "hour_list": [
                     {
                         "id": 1,
-                        "hour": "1"
+                        "hour": "1",
+                        "subject": "english"
                     },
                     {
                         "id": 2,
-                        "hour": "2"
+                        "hour": "2",
+                        "subject": "history"
                     }
                 ]
             }
@@ -2272,7 +2274,7 @@ Get all borrowed books
                 }
             ]
 
-## Dairies for student [GET /teacher/student/dairy]
+## Dairies for student [GET /teacher/dairy]
 Get all dairies for student
 
 + Request (application/json)
