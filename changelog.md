@@ -1,5 +1,8 @@
 #ChangeLog
 
+### 12-10-2015
+ * add subject_list method in librarian to get list of subjects with direction and class
+
 ### 09-10-2015
  * add method transportations_directions which return all transportation with directions 
  * fix in invoices in parent api-change param

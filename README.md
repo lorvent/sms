@@ -2625,3 +2625,26 @@ Get all reserved books
             {
                 "error": "not_valid_data"
             }
+
+## Get list of subjects [GET /librarian/subject_list]
+Get list of subjects for all directions and class use for creating book
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            [
+                {
+                    "id": "1",
+                    "title": "Direction2 (3) English",
+                    "direction": "Direction2",
+                    "class": "3",
+                    "subject": "English"
+                }
+            ]
