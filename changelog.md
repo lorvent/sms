@@ -1,5 +1,8 @@
 #ChangeLog
 
+### 13-10-2015
+ * add user_list method in librarian to get list of users for issuing the book
+ 
 ### 12-10-2015
  * add subject_list method in librarian to get list of subjects with direction and class
 

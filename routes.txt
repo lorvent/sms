@@ -89,4 +89,5 @@ No - no need token
 |      | POST /api/librarian/issue_book             |      | Closure | Yes       | v1         |          |
 |      | POST /api/librarian/return_book            |      | Closure | Yes       | v1         |          |
 |      | GET /api/librarian/subject_list            |      | Closure | Yes       | v1         |          |
+|      | GET /api/librarian/user_list               |      | Closure | Yes       | v1         |          |
 +------+--------------------------------------------+------+---------+-----------+------------+----------+

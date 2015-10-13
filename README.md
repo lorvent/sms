@@ -2648,3 +2648,24 @@ Get list of subjects for all directions and class use for creating book
                     "subject": "English"
                 }
             ]
+
+## Get list of users [GET /librarian/user_list]
+Get list of users for issuing book
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            [
+                {
+                    "id": "1",
+                    "name": "First Last name",
+                    "role": "teacher|librarian|admin|student|parent"
+                }
+            ]
