@@ -1255,7 +1255,8 @@ Get subject list for student
                 "subjects": {
                     "id": 1,
                     "subject": "English",
-                    "teacher": "Test Teacher"
+                    "teacher": "Test Teacher",
+                    "image": ""
                 }
             }
 
