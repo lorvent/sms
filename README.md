@@ -2584,7 +2584,8 @@ Get all reserved books
                 "token": "foo",
                 "book_id": "1",
                 "user_id": "1",
-                "note": "This is note"
+                "note": "This is note",
+                "date": "2015-02-02"
             }
 
 + Response 200 (application/json)
