@@ -1,5 +1,8 @@
 #ChangeLog
 
+### 14-10-2015
+ * add student_subject method for get students subject list with teacher which is added to teach that subject
+
 ### 13-10-2015
  * add user_list method in librarian to get list of users for issuing the book
  

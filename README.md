@@ -794,6 +794,7 @@ Get all borrowed books for user
                         "title": "EngLib",
                         "author": "Ruth D. Brown",
                         "subject": "English",
+                        "internal": "12-15",
                         "get": "2015-09-11"
                     },
                     {
@@ -801,6 +802,7 @@ Get all borrowed books for user
                         "title": "SciLib",
                         "author": "Matthew D. Stewart",
                         "subject": "Science",
+                        "internal": "158/59",
                         "get": "2015-09-11"
                     }
                 ],
@@ -1226,6 +1228,35 @@ Get exams for subject and student
                         "date": "2015-02-02"
                     }
                 ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Subject list for student [GET /student/student_subject]
+Get subject list for student
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "subjects": {
+                    "id": 1,
+                    "subject": "English",
+                    "teacher": "Test Teacher"
+                }
             }
 
 + Response 500 (application/json)

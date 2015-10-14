@@ -46,6 +46,7 @@ No - no need token
 |      | GET|HEAD /api/student/exams                |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/student/exam_subject         |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/student/dairy                |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/student/student_subject      |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/school_years          |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/timetable             |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/borrowed_books        |      | Closure | Yes       | v1         |          |
@@ -57,6 +58,7 @@ No - no need token
 |      | GET|HEAD /api/parent/notices               |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/exams                 |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/dairy                 |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/parent/student_subject       |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/timetable            |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/school_years         |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/timetable_group      |      | Closure | Yes       | v1         |          |
