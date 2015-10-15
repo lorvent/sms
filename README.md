@@ -2298,13 +2298,16 @@ Get all borrowed books
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "title": "Book for mathematics",
-                    "author": "Group of authors",
-                    "get": "2015-08-10"
-                }
-            ]
+            {
+                "books": [
+                    {
+                        "user_book_id": "1",
+                        "title": "Book for mathematics",
+                        "author": "Group of authors",
+                        "get": "2015-08-10"
+                    }
+                ]
+            }
 
 ## Dairies for student [GET /teacher/dairy]
 Get all dairies for student
@@ -2434,13 +2437,16 @@ Get all borrowed books
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "title": "Book for mathematics",
-                    "author": "Group of authors",
-                    "get": "2015-08-10"
-                }
-            ]
+            {
+                "books": [
+                    {
+                        "user_book_id": "1",
+                        "title": "Book for mathematics",
+                        "author": "Group of authors",
+                        "get": "2015-08-10"
+                    }
+                ]
+            }
 
 ## Post new book [POST /librarian/add_book]
 
@@ -2545,15 +2551,15 @@ Get all reserved books
 + Response 200 (application/json)
     + Body
 
-            [
-                {
+            {
+                "books": {
                     "id": "1",
                     "title": "Book for mathematics",
                     "author": "Group of authors",
                     "subject": "Mathematics",
                     "reserved": "2015-08-10"
                 }
-            ]
+            }
 
 ## Delete reserve book [POST /librarian/delete_reserved_book]
 
@@ -2672,15 +2678,17 @@ Get list of subjects for all directions and class use for creating book
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "title": "Direction2 (3) English",
-                    "direction": "Direction2",
-                    "class": "3",
-                    "subject": "English"
-                }
-            ]
+            {
+                "subjects": [
+                    {
+                        "id": "1",
+                        "title": "Direction2 (3) English",
+                        "direction": "Direction2",
+                        "class": "3",
+                        "subject": "English"
+                    }
+                ]
+            }
 
 ## Get list of users [GET /librarian/user_list]
 Get list of users for issuing book
@@ -2695,10 +2703,12 @@ Get list of users for issuing book
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "name": "First Last name",
-                    "role": "teacher|librarian|admin|student|parent"
-                }
-            ]
+            {
+                "users": [
+                    {
+                        "id": "1",
+                        "name": "First Last name",
+                        "role": "teacher|librarian|admin|student|parent"
+                    }
+                ]
+            }
