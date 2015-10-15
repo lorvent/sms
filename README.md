@@ -763,15 +763,17 @@ Get all reserved books for user
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "title": "Book for mathematics",
-                    "author": "Group of authors",
-                    "subject": "Mathematics",
-                    "reserved": "2015-08-10"
-                }
-            ]
+            {
+                "books": [
+                    {
+                        "id": "1",
+                        "title": "Book for mathematics",
+                        "author": "Group of authors",
+                        "subject": "Mathematics",
+                        "reserved": "2015-08-10"
+                    }
+                ]
+            }
 
 ## Borrowed books for user [GET /borrowed_user_books]
 Get all borrowed books for user
@@ -1027,6 +1029,8 @@ Get all borrowed books
             [
                 {
                     "title": "Book for mathematics",
+                    "id": "12",
+                    "internal": "12-45",
                     "author": "Group of authors",
                     "get": "2015-08-10"
                 }
@@ -1376,6 +1380,8 @@ Get all borrowed books
                 "borrowed_books": {
                     "title": "Book for mathematics",
                     "author": "Group of authors",
+                    "id": "12",
+                    "internal": "12-45",
                     "get": "2015-08-10"
                 },
                 "0": {
