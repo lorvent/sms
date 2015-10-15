@@ -1203,7 +1203,7 @@ Get all dairies for student
                 "error": "not_valid_data"
             }
 
-## Dairies for student [GET /student/dairy_date]
+## Dairies for student and date [GET /student/dairy_date]
 Get all dairies for student and selected date
 
 + Request (application/json)
@@ -1617,8 +1617,8 @@ Get all dairies for student
                 "error": "not_valid_data"
             }
 
-## Dairies for student [GET /parent/dairy_for_date]
-Get all dairies for student
+## Dairies for student and date [GET /parent/dairy_date]
+Get all dairies for student and selected date
 
 + Request (application/json)
     + Body
