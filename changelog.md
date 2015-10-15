@@ -1,5 +1,8 @@
 #ChangeLog
 
+### 15-10-2015
+ * add dairy_date method for get students and parents to get dairy for selected date and student
+
 ### 14-10-2015
  * add student_subject method for get students subject list with teacher which is added to teach that subject
 

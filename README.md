@@ -1203,6 +1203,41 @@ Get all dairies for student
                 "error": "not_valid_data"
             }
 
+## Dairies for student [GET /student/dairy_date]
+Get all dairies for student and selected date
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1",
+                "date": "2015-10-10"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "dairies": [
+                    {
+                        "id": 1,
+                        "title": "This is title of notice",
+                        "subject": "English",
+                        "description": "This is description of notice",
+                        "hour": "2",
+                        "date": "2015-02-02"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
 ## Exams for student and student [GET /student/exam_subject]
 Get exams for subject and student
 
@@ -1571,6 +1606,41 @@ Get all dairies for student
                         "description": "This is description of notice",
                         "hour": "2",
                         "date": "2015-02-02"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Dairies for student [GET /parent/dairy_for_date]
+Get all dairies for student
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1",
+                "date": "2015-10-10"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "dairies": [
+                    {
+                        "id": 1,
+                        "title": "This is title of notice",
+                        "subject": "English",
+                        "description": "This is description of notice",
+                        "hour": "2",
+                        "date": "2015-10-10"
                     }
                 ]
             }
