@@ -1,5 +1,8 @@
 #ChangeLog
 
+### 16-10-2015
+ * add exam_marks method for get all exams for teacher,student and parent and exam_marks_details for get details of selected exam
+
 ### 15-10-2015
  * add dairy_date method for get students and parents to get dairy for selected date and student
 

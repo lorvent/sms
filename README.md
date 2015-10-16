@@ -1306,6 +1306,80 @@ Get subject list for student
                 "error": "not_valid_data"
             }
 
+## Get exams with totals marks [GET /student/exam_marks]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "exams": [
+                    {
+                        "id": 1,
+                        "title": "This is title of exam",
+                        "subject": "English",
+                        "date": "2015-02-02",
+                        "total_marks": "5"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Get marks for selected exam [GET /student/exam_marks_details]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "exam_id": "1",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "marks": [
+                    {
+                        "id": 1,
+                        "title": "This is title of exam",
+                        "description": "This is description of exam",
+                        "subject": "English",
+                        "date": "2015-02-02",
+                        "marks": [
+                            {
+                                "id": "105",
+                                "mark_value": "F",
+                                "mark_type": "gk"
+                            }
+                        ]
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
 # Parent [/parent]
 Parent endpoints, can be accessed only with role "parent"
 
@@ -1709,6 +1783,80 @@ Get student id for user and school year
 
             {
                 "student_id": "1"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Get exams with totals marks [GET /parent/exam_marks]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "exams": [
+                    {
+                        "id": 1,
+                        "title": "This is title of exam",
+                        "subject": "English",
+                        "date": "2015-02-02",
+                        "total_marks": "5"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Get marks for selected exam [GET /parent/exam_marks_details]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "exam_id": "1",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "marks": [
+                    {
+                        "id": 1,
+                        "title": "This is title of exam",
+                        "description": "This is description of exam",
+                        "subject": "English",
+                        "date": "2015-02-02",
+                        "marks": [
+                            {
+                                "id": "105",
+                                "mark_value": "F",
+                                "mark_type": "gk"
+                            }
+                        ]
+                    }
+                ]
             }
 
 + Response 500 (application/json)
@@ -2464,6 +2612,79 @@ Get all dairies for student
 
             {
                 "success": "success"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Get exams with totals marks [GET /teacher/exam_marks]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_group_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "exams": [
+                    {
+                        "id": 1,
+                        "title": "This is title of exam",
+                        "subject": "English",
+                        "date": "2015-02-02",
+                        "total_marks": "5"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Get marks for selected exam [GET /teacher/exam_marks_details]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "exam_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "marks": [
+                    {
+                        "id": 1,
+                        "title": "This is title of exam",
+                        "description": "This is description of exam",
+                        "subject": "English",
+                        "date": "2015-02-02",
+                        "marks": [
+                            {
+                                "id": "105",
+                                "mark_value": "F",
+                                "mark_type": "gk"
+                            }
+                        ]
+                    }
+                ]
             }
 
 + Response 500 (application/json)
