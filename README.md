@@ -1053,15 +1053,12 @@ Get all attendances for student between two dates
     + Body
 
             {
-                "attendance": [
-                    {
-                        "id": 1,
-                        "subject": "Subject Name",
-                        "hour": "2",
-                        "justified": "yes",
-                        "date": "2015-06-05"
+                "attendance": {
+                    "2015-10-01": {
+                        "2": "yes",
+                        "3": "no"
                     }
-                ]
+                }
             }
 
 + Response 500 (application/json)
@@ -1485,15 +1482,12 @@ Get all attendances for student between two dates
     + Body
 
             {
-                "attendance": [
-                    {
-                        "id": 1,
-                        "subject": "Subject Name",
-                        "hour": "2",
-                        "justified": "yes",
-                        "date": "2015-06-05"
+                "attendance": {
+                    "2015-10-01": {
+                        "2": "yes",
+                        "3": "no"
                     }
-                ]
+                }
             }
 
 + Response 500 (application/json)
