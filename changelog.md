@@ -1,5 +1,8 @@
 #ChangeLog
 
+### 17-10-2015
+ * add applying_leave method for get all applying leave for teacher and parent and post_applying_leave & delete_applying_leave port post and delete applying leave for student by parent
+
 ### 16-10-2015
  * add exam_marks method for get all exams for teacher,student and parent and exam_marks_details for get details of selected exam
 

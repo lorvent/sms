@@ -1860,6 +1860,92 @@ Get student id for user and school year
                 "error": "not_valid_data"
             }
 
+## Get all applying leave for selected student [GET /parent/applying_leave]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "applying_leave": [
+                    {
+                        "id": 1,
+                        "title": "This is title of exam",
+                        "description": "This is description of exam",
+                        "date": "2015-02-02"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Post applying leave for student [POST /parent/post_applying_leave]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_id": "1",
+                "title": "This is title",
+                "date": "2015-06-08",
+                "hour": "1",
+                "description": "This is description"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "success": "success"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Delete dairy [POST /parent/delete_applying_leave]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "applying_leave_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "success": "success"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
 # Teacher [/teacher]
 Teacher endpoints, can be accessed only with role "teacher"
 
@@ -2677,6 +2763,39 @@ Get all dairies for student
                                 "mark_type": "gk"
                             }
                         ]
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Get all applying leave for selected student [GET /teacher/applying_leave]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_group_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "applying_leave": [
+                    {
+                        "id": 1,
+                        "title": "This is title of exam",
+                        "description": "This is description of exam",
+                        "date": "2015-02-02",
+                        "student_name": "Student Name"
                     }
                 ]
             }

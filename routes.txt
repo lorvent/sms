@@ -65,6 +65,9 @@ No - no need token
 |      | GET|HEAD /api/parent/student_subject       |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/exam_marks            |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/exam_marks_details    |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/parent/applying_leave        |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/parent/post_applying_leave   |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/parent/delete_applying_leave |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/timetable            |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/school_years         |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/timetable_group      |      | Closure | Yes       | v1         |          |
@@ -89,6 +92,7 @@ No - no need token
 |      | GET|HEAD /api/teacher/exam_marks_details   |      | Closure | Yes       | v1         |          |
 |      | POST /api/teacher/post_dairy               |      | Closure | Yes       | v1         |          |
 |      | POST /api/teacher/delete_dairy             |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/teacher/applying_leave       |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/librarian/borrowed_books     |      | Closure | Yes       | v1         |          |
 |      | POST /api/librarian/add_book               |      | Closure | Yes       | v1         |          |
 |      | POST /api/librarian/edit_book              |      | Closure | Yes       | v1         |          |
