@@ -1281,7 +1281,8 @@ Get exams for student group
 
             {
                 "token": "foo",
-                "student_group_id": "1"
+                "student_group_id": "1",
+                "student_id": "1"
             }
 
 + Response 200 (application/json)
@@ -1801,7 +1802,8 @@ Get exams for student group
 
             {
                 "token": "foo",
-                "student_group_id": "1"
+                "student_group_id": "1",
+                "student_id": "1"
             }
 
 + Response 200 (application/json)
