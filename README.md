@@ -1273,6 +1273,39 @@ Get exams for subject and student
                 "error": "not_valid_data"
             }
 
+## Exams for student group [GET /student/exam_group]
+Get exams for student group
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_group_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "exams": [
+                    {
+                        "id": 1,
+                        "title": "This is title of exam",
+                        "subject": "English",
+                        "description": "This is description of exam",
+                        "date": "2015-02-02"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
 ## Subject list for student [GET /student/student_subject]
 Get subject list for student
 
@@ -1736,6 +1769,39 @@ Get exams for subject and student
                 "token": "foo",
                 "student_id": "1",
                 "subject_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "exams": [
+                    {
+                        "id": 1,
+                        "title": "This is title of exam",
+                        "subject": "English",
+                        "description": "This is description of exam",
+                        "date": "2015-02-02"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Exams for student group [GET /parent/exam_group]
+Get exams for student group
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_group_id": "1"
             }
 
 + Response 200 (application/json)

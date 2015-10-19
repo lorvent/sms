@@ -1,5 +1,8 @@
 #ChangeLog
 
+### 19-10-2015
+ * add exam_group method for get all exam for selected group
+
 ### 17-10-2015
  * add applying_leave method for get all applying leave for teacher and parent and post_applying_leave & delete_applying_leave port post and delete applying leave for student by parent
 
