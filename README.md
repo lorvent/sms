@@ -1971,7 +1971,6 @@ Get student id for user and school year
                 "student_id": "1",
                 "title": "This is title",
                 "date": "2015-06-08",
-                "hour": "1",
                 "description": "This is description"
             }
 
