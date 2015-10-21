@@ -1,5 +1,8 @@
 #ChangeLog
 
+### 21-10-2015
+ * add fee_details into parent api fo get student fee details
+
 ### 19-10-2015
  * add exam_group method for get all exam for selected group
 

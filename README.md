@@ -2013,6 +2013,52 @@ Get student id for user and school year
                 "error": "not_valid_data"
             }
 
+## Get all fee details leave for selected student
+(paid=1 - payed , 0-not payed) [GET /parent/fee_details]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_user_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "fee_details": {
+                    "student_name": "Margaret  Graham",
+                    "terms": [
+                        {
+                            "id": "5",
+                            "title": "fee",
+                            "paid": "1",
+                            "amount": "200.00",
+                            "created_at": "2015-09-11 06:25:49"
+                        },
+                        {
+                            "id": "6",
+                            "title": "John Mid-Term",
+                            "paid": "0",
+                            "amount": "200.00",
+                            "created_at": "2015-09-16 10:03:20"
+                        }
+                    ],
+                    "total_fee": "400.00",
+                    "paid_fee": "200.00"
+                }
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
 # Teacher [/teacher]
 Teacher endpoints, can be accessed only with role "teacher"
 
