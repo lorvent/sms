@@ -1428,6 +1428,34 @@ Get subject list for student
                 "error": "not_valid_data"
             }
 
+## Get last school year and group
+Get last school year and group where teacher teach some subject [GET /student/school_year_group]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "school_year_id": 1,
+                "school_year": "2015-2016",
+                "student_id": "1",
+                "student_name": "Student Name"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
 # Parent [/parent]
 Parent endpoints, can be accessed only with role "parent"
 
@@ -2067,6 +2095,35 @@ Get student id for user and school year
                     "total_fee": "400.00",
                     "paid_fee": "200.00"
                 }
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Get last school year and group
+Get last school year and group where teacher teach some subject [GET /parent/school_year_group]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "school_year_id": 1,
+                "school_year": "2015-2016",
+                "student_id": "1",
+                "student_user_id": "1",
+                "student_name": "Student Name"
             }
 
 + Response 500 (application/json)
@@ -2928,6 +2985,34 @@ Get all dairies for student
                         "student_name": "Student Name"
                     }
                 ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Get last school year and group
+Get last school year and group where teacher teach some subject [GET /teacher/school_year_group]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "school_year_id": 1,
+                "school_year": "2015-2016",
+                "group_id": "1",
+                "group": "1-2"
             }
 
 + Response 500 (application/json)

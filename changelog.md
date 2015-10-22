@@ -1,5 +1,10 @@
 #ChangeLog
 
+### 22-10-2015
+ * add school_year_student into teacher api for get school year and first selected group for teacher
+ * add school_year_child into parent api to get last school year and last child which added
+ * add school_year_student into student api to get last school year and student_id for student user
+
 ### 21-10-2015
  * add fee_details into parent api fo get student fee details
 
