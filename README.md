@@ -657,14 +657,16 @@ Get all payments for user, student select there payment and parent select for th
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "student_id": "1",
-                    "section_id": "1",
-                    "section_name": "1-2",
-                    "order": "2"
-                }
-            ]
+            {
+                "student": [
+                    {
+                        "student_id": "1",
+                        "section_id": "1",
+                        "section_name": "1-2",
+                        "order": "2"
+                    }
+                ]
+            }
 
 + Response 500 (application/json)
     + Body
@@ -694,32 +696,36 @@ Get all payments for user, student select there payment and parent select for th
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "subject": "History",
-                    "title": "History of world 1",
-                    "author": "Group of authors",
-                    "year": "2015",
-                    "internal": "2015/15",
-                    "publisher": "Book publisher",
-                    "version": "0.2",
-                    "issued": 2,
-                    "quantity": 2
-                },
-                {
-                    "id": "2",
-                    "subject": "English",
-                    "title": "English 2",
-                    "author": "Group of authors",
-                    "year": "2015",
-                    "internal": "2015/15",
-                    "publisher": "Book publisher",
-                    "version": "0.2",
-                    "issued": 1,
-                    "quantity": 2
-                }
-            ]
+            {
+                "books": [
+                    {
+                        "id": "1",
+                        "subject": "History",
+                        "subject_id": 3,
+                        "title": "History of world 1",
+                        "author": "Group of authors",
+                        "year": "2015",
+                        "internal": "2015/15",
+                        "publisher": "Book publisher",
+                        "version": "0.2",
+                        "issued": 2,
+                        "quantity": 2
+                    },
+                    {
+                        "id": "2",
+                        "subject": "English",
+                        "subject_id": 1,
+                        "title": "English 2",
+                        "author": "Group of authors",
+                        "year": "2015",
+                        "internal": "2015/15",
+                        "publisher": "Book publisher",
+                        "version": "0.2",
+                        "issued": 1,
+                        "quantity": 2
+                    }
+                ]
+            }
 
 ## Get search users [GET /user_search]
 
@@ -742,12 +748,14 @@ Get all payments for user, student select there payment and parent select for th
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "name": "Name Surname"
-                }
-            ]
+            {
+                "users": [
+                    {
+                        "id": "1",
+                        "name": "Name Surname"
+                    }
+                ]
+            }
 
 ## Reserved books for user [GET /reserved_user_books]
 Get all reserved books for user
@@ -833,19 +841,28 @@ Get all books for subject
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "title": "Book for mathematics",
-                    "author": "Group of authors",
-                    "year": "2015",
-                    "internal": "15-14",
-                    "publisher": "Book publisher",
-                    "version": "0.2",
-                    "quantity": 2,
-                    "issued": 1
-                }
-            ]
+            {
+                "books": [
+                    {
+                        "id": "1",
+                        "title": "Book for mathematics",
+                        "author": "Group of authors",
+                        "year": "2015",
+                        "internal": "15-14",
+                        "publisher": "Book publisher",
+                        "version": "0.2",
+                        "quantity": 2,
+                        "issued": 1
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
 
 ## Feedback [GET /feedback]
 Get all Feedback for user
