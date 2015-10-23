@@ -1,5 +1,8 @@
 #ChangeLog
 
+### 23-10-2015
+ * add dairy_date to teacher api
+
 ### 22-10-2015
  * add school_year_student into teacher api for get school year and first selected group for teacher
  * add school_year_child into parent api to get last school year and last child which added

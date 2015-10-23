@@ -99,6 +99,7 @@ No - no need token
 |      | POST /api/teacher/delete_dairy             |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/applying_leave       |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/school_year_group    |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/teacher/dairy_date           |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/librarian/borrowed_books     |      | Closure | Yes       | v1         |          |
 |      | POST /api/librarian/add_book               |      | Closure | Yes       | v1         |          |
 |      | POST /api/librarian/edit_book              |      | Closure | Yes       | v1         |          |

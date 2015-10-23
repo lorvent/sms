@@ -2832,6 +2832,41 @@ Get all dairies for student
                 "error": "not_valid_data"
             }
 
+## Dairies for student group and date [GET /teacher/dairy_date]
+Get all dairies for student group and selected date
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_group_id": "1",
+                "date": "2015-10-10"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "dairies": [
+                    {
+                        "id": 1,
+                        "title": "This is title of notice",
+                        "subject": "English",
+                        "description": "This is description of notice",
+                        "hour": "2",
+                        "date": "2015-02-02"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
 ## Post dairy for subject, hour and date [POST /teacher/post_dairy]
 
 
