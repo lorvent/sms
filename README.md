@@ -1428,8 +1428,8 @@ Get subject list for student
                 "error": "not_valid_data"
             }
 
-## Get last school year and group
-Get last school year and group where teacher teach some subject [GET /student/school_year_group]
+## Get last school year and student_id
+Get last school year and student_id for student user [GET /student/school_year_student]
 
 
 + Request (application/json)
@@ -1445,8 +1445,7 @@ Get last school year and group where teacher teach some subject [GET /student/sc
             {
                 "school_year_id": 1,
                 "school_year": "2015-2016",
-                "student_id": "1",
-                "student_name": "Student Name"
+                "student_id": "1"
             }
 
 + Response 500 (application/json)
@@ -2104,8 +2103,8 @@ Get student id for user and school year
                 "error": "not_valid_data"
             }
 
-## Get last school year and group
-Get last school year and group where teacher teach some subject [GET /parent/school_year_group]
+## Get last school year and child
+Get last school year and last child which added [GET /parent/school_year_child]
 
 
 + Request (application/json)
@@ -2145,7 +2144,6 @@ This method use all roles because all data(students, sections, marks, behaviors,
 
             {
                 "token": "foo",
-                "user_id": 1,
                 "school_year": 1
             }
 
