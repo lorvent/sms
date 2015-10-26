@@ -2898,7 +2898,7 @@ Get all diaries for student group and selected date
                 "error": "not_valid_data"
             }
 
-## Edit book [POST /teacher/edit_book]
+## Edit diary [POST /teacher/edit_diary]
 
 
 + Request (application/json)

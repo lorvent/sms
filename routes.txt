@@ -102,6 +102,7 @@ No - no need token
 |      | GET|HEAD /api/teacher/diary_date           |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/subjects             |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/hours                |      | Closure | Yes       | v1         |          |
+|      | POST /api/teacher/edit_diary               |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/librarian/borrowed_books     |      | Closure | Yes       | v1         |          |
 |      | POST /api/librarian/add_book               |      | Closure | Yes       | v1         |          |
 |      | POST /api/librarian/edit_book              |      | Closure | Yes       | v1         |          |

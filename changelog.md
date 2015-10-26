@@ -4,6 +4,7 @@
  * fix name of methods: dairy->diary
  * add subjects to teacher api to get subjects for selected group
  * add hours to teacher api to get list of hours for selected group,subject and date
+ * add edit_diary to teacher api for edit diary record
  
 ### 23-10-2015
  * add dairy_date to teacher api
