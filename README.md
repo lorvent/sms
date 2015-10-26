@@ -2058,7 +2058,7 @@ Get student id for user and school year
             }
 
 ## Get all fee details leave for selected student
-(paid=1 - payed , 0-not payed) [GET /parent/fee_details]
+(paid=1-payed , 0-not payed) [GET /parent/fee_details]
 
 
 + Request (application/json)
@@ -2092,7 +2092,8 @@ Get student id for user and school year
                         }
                     ],
                     "total_fee": "400.00",
-                    "paid_fee": "200.00"
+                    "paid_fee": "300.00",
+                    "balance_fee": "100.00"
                 }
             }
 
