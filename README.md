@@ -1187,8 +1187,8 @@ Get all notices for teacher group
                 "error": "not_valid_data"
             }
 
-## Dairies for student [GET /student/dairy]
-Get all dairies for student
+## Dairies for student [GET /student/diary]
+Get all diaries for student
 
 + Request (application/json)
     + Body
@@ -1202,7 +1202,7 @@ Get all dairies for student
     + Body
 
             {
-                "dairies": [
+                "diaries": [
                     {
                         "id": 1,
                         "title": "This is title of notice",
@@ -1221,8 +1221,8 @@ Get all dairies for student
                 "error": "not_valid_data"
             }
 
-## Dairies for student and date [GET /student/dairy_date]
-Get all dairies for student and selected date
+## Dairies for student and date [GET /student/diary_date]
+Get all diaries for student and selected date
 
 + Request (application/json)
     + Body
@@ -1237,7 +1237,7 @@ Get all dairies for student and selected date
     + Body
 
             {
-                "dairies": [
+                "diaries": [
                     {
                         "id": 1,
                         "title": "This is title of notice",
@@ -1735,8 +1735,8 @@ Get all notices for student
                 "error": "not_valid_data"
             }
 
-## Dairies for student [GET /parent/dairy]
-Get all dairies for student
+## Dairies for student [GET /parent/diary]
+Get all diaries for student
 
 + Request (application/json)
     + Body
@@ -1750,7 +1750,7 @@ Get all dairies for student
     + Body
 
             {
-                "dairies": [
+                "diaries": [
                     {
                         "id": 1,
                         "title": "This is title of notice",
@@ -1769,8 +1769,8 @@ Get all dairies for student
                 "error": "not_valid_data"
             }
 
-## Dairies for student and date [GET /parent/dairy_date]
-Get all dairies for student and selected date
+## Dairies for student and date [GET /parent/diary_date]
+Get all diaries for student and selected date
 
 + Request (application/json)
     + Body
@@ -1785,7 +1785,7 @@ Get all dairies for student and selected date
     + Body
 
             {
-                "dairies": [
+                "diaries": [
                     {
                         "id": 1,
                         "title": "This is title of notice",
@@ -2032,7 +2032,7 @@ Get student id for user and school year
                 "error": "not_valid_data"
             }
 
-## Delete dairy [POST /parent/delete_applying_leave]
+## Delete diary [POST /parent/delete_applying_leave]
 
 
 + Request (application/json)
@@ -2799,8 +2799,8 @@ Get all borrowed books
                 ]
             }
 
-## Dairies for student [GET /teacher/dairy]
-Get all dairies for student
+## Dairies for student [GET /teacher/diary]
+Get all diaries for student
 
 + Request (application/json)
     + Body
@@ -2833,8 +2833,8 @@ Get all dairies for student
                 "error": "not_valid_data"
             }
 
-## Dairies for student group and date [GET /teacher/dairy_date]
-Get all dairies for student group and selected date
+## Dairies for student group and date [GET /teacher/diary_date]
+Get all diaries for student group and selected date
 
 + Request (application/json)
     + Body
@@ -2849,10 +2849,11 @@ Get all dairies for student group and selected date
     + Body
 
             {
-                "dairies": [
+                "diaries": [
                     {
                         "id": 1,
                         "title": "This is title of notice",
+                        "subject_id": 12,
                         "subject": "English",
                         "description": "This is description of notice",
                         "hour": "2",
@@ -2868,7 +2869,7 @@ Get all dairies for student group and selected date
                 "error": "not_valid_data"
             }
 
-## Post dairy for subject, hour and date [POST /teacher/post_dairy]
+## Post diary for subject, hour and date [POST /teacher/post_diary]
 
 
 + Request (application/json)
@@ -2897,7 +2898,7 @@ Get all dairies for student group and selected date
                 "error": "not_valid_data"
             }
 
-## Delete dairy [POST /teacher/delete_dairy]
+## Edit book [POST /teacher/edit_book]
 
 
 + Request (application/json)
@@ -2905,7 +2906,37 @@ Get all dairies for student group and selected date
 
             {
                 "token": "foo",
-                "dairy_id": "1"
+                "diary_id": "1",
+                "subject_id": "1",
+                "title": "This is title",
+                "date": "2015-06-08",
+                "hour": "1",
+                "description": "This is description"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "success": "success"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Delete diary [POST /teacher/delete_diary]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "diary_id": "1"
             }
 
 + Response 200 (application/json)
@@ -3047,6 +3078,68 @@ Get last school year and group where teacher teach some subject [GET /teacher/sc
                 "school_year": "2015-2016",
                 "group_id": "1",
                 "group": "1-2"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Subject for group [GET /teacher/subjects]
+Get all subject for teacher for selected student group
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_group_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "subjects": [
+                    {
+                        "id": 1,
+                        "title": "English"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Hours for group and date [GET /teacher/hours]
+Get all hours for selected student group and date
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_group_id": "1",
+                "date": "2015-10-10",
+                "subject_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "hours": [
+                    {
+                        "id": "1",
+                        "hour": "2"
+                    }
+                ]
             }
 
 + Response 500 (application/json)
