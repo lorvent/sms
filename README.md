@@ -2877,6 +2877,7 @@ Get all diaries for student group and selected date
 
             {
                 "token": "foo",
+                "group_id": "1",
                 "subject_id": "1",
                 "title": "This is title",
                 "date": "2015-06-08",
