@@ -2074,21 +2074,21 @@ Get student id for user and school year
 
             {
                 "fee_details": {
-                    "student_name": "Margaret  Graham",
+                    "student_name": "Student  Name",
                     "terms": [
                         {
                             "id": "5",
                             "title": "fee",
                             "paid": "1",
                             "amount": "200.00",
-                            "created_at": "2015-09-11 06:25:49"
+                            "date": "2015-09-11 06:25:49"
                         },
                         {
                             "id": "6",
                             "title": "John Mid-Term",
                             "paid": "0",
                             "amount": "200.00",
-                            "created_at": "2015-09-16 10:03:20"
+                            "date": "2015-09-16 10:03:20"
                         }
                     ],
                     "total_fee": "400.00",
