@@ -3035,7 +3035,8 @@ Get all diaries for student group and selected date
 
             {
                 "token": "foo",
-                "student_group_id": "1"
+                "student_group_id": "1",
+                "date": "2015-10-10"
             }
 
 + Response 200 (application/json)
@@ -3047,7 +3048,7 @@ Get all diaries for student group and selected date
                         "id": 1,
                         "title": "This is title of exam",
                         "description": "This is description of exam",
-                        "date": "2015-02-02",
+                        "date": "2015-10-10",
                         "student_name": "Student Name"
                     }
                 ]
