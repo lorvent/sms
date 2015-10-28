@@ -317,16 +317,18 @@ Teachers need this to choose which is notice type
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "title": "Notice of oral"
-                },
-                {
-                    "id": "2",
-                    "title": "Notice of writing test"
-                }
-            ]
+            {
+                "notice_type": [
+                    {
+                        "id": "1",
+                        "title": "Notice of oral"
+                    },
+                    {
+                        "id": "2",
+                        "title": "Notice of writing test"
+                    }
+                ]
+            }
 
 ## Notifications [GET /notifications]
 Get all notifications
@@ -342,15 +344,17 @@ All users get all they notification
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "read": "0",
-                    "title": "Notification 1",
-                    "content": "This is content of notification",
-                    "date": "2015-10-12"
-                }
-            ]
+            {
+                "notifications": [
+                    {
+                        "id": "1",
+                        "read": "0",
+                        "title": "Notification 1",
+                        "content": "This is content of notification",
+                        "date": "2015-10-12"
+                    }
+                ]
+            }
 
 ## Sections [GET /sections]
 Get all sections
@@ -367,18 +371,20 @@ Admin role to get all sections
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "title": "1 - 1",
-                    "section_teacher": "Teacher Name 1"
-                },
-                {
-                    "id": "2",
-                    "title": "1 - 2",
-                    "section_teacher": "Teacher Name 2"
-                }
-            ]
+            {
+                "sections": [
+                    {
+                        "id": "1",
+                        "title": "1 - 1",
+                        "section_teacher": "Teacher Name 1"
+                    },
+                    {
+                        "id": "2",
+                        "title": "1 - 2",
+                        "section_teacher": "Teacher Name 2"
+                    }
+                ]
+            }
 
 + Response 500 (application/json)
     + Body
@@ -2347,6 +2353,7 @@ Get all notices for teacher group
                         "notice_type_id": "1",
                         "subject_id": "1",
                         "subject": "English",
+                        "notice_type": "Exam",
                         "description": "This is description of notice",
                         "date": "2015-02-02"
                     }
@@ -2373,6 +2380,36 @@ Get all notices for teacher group
                 "subject_id": "1",
                 "title": "This is title",
                 "date": "2015-06-08",
+                "description": "This is description"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "success": "success"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Edit notice [POST /teacher/edit_notice]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "notice_id": "1",
+                "subject_id": "1",
+                "title": "This is title",
+                "date": "2015-06-08",
+                "notice_type_id": "1",
                 "description": "This is description"
             }
 
