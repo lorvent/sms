@@ -2332,7 +2332,8 @@ Get all notices for teacher group
 
             {
                 "token": "foo",
-                "student_group_id": "1"
+                "student_group_id": "1",
+                "date": "2015-10-10"
             }
 
 + Response 200 (application/json)
@@ -2343,6 +2344,8 @@ Get all notices for teacher group
                     {
                         "id": 1,
                         "title": "This is title of notice",
+                        "notice_type_id": "1",
+                        "subject_id": "1",
                         "subject": "English",
                         "description": "This is description of notice",
                         "date": "2015-02-02"
