@@ -2532,6 +2532,40 @@ Get all attendances for teacher group between two date
                 "error": "not_valid_data"
             }
 
+## Attendances for teacher group by date [GET /teacher/attendances_date]
+Get all attendances for teacher group by date
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_group_id": "1",
+                "date": "2015-10-12"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "attendance": [
+                    {
+                        "id": 1,
+                        "student": "Student Name",
+                        "hour": "2",
+                        "justified": "yes",
+                        "date": "2015-06-05"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
 ## Attendances list of hours from timetable [GET /teacher/attendance_hour_list]
 Get all attendances list of hours from timetable for selected date and group
 

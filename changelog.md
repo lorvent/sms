@@ -1,5 +1,8 @@
 #ChangeLog
 
+### 28-10-2015
+ * add attendances_date to teacher api to get attendances for selected date
+  
 ### 23-10-2015
  * fix params of applying_leave method in teacher
  
