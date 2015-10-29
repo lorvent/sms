@@ -2642,13 +2642,13 @@ Get all attendances list of hours from timetable for selected date and group
                     {
                         "id": 1,
                         "hour": "1",
-                        "student_id": "1",
+                        "subject_id": "1",
                         "subject": "english"
                     },
                     {
                         "id": 2,
                         "hour": "2",
-                        "student_id": "1",
+                        "subject_id": "1",
                         "subject": "history"
                     }
                 ]
@@ -2669,13 +2669,41 @@ Get all attendances list of hours from timetable for selected date and group
 
             {
                 "token": "foo",
-                "subject_id": "1",
                 "student_id": "1",
                 "date": "2015-06-08",
                 "hour": "2",
                 "note": "This is note",
-                "justified": "yes",
-                "school_year_id": "1"
+                "justified": "yes"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "success": "success"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Edit attendance [POST /teacher/edit_attendance]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "diary_id": "1",
+                "subject_id": "1",
+                "title": "This is title",
+                "date": "2015-06-08",
+                "hour": "1",
+                "description": "This is description"
             }
 
 + Response 200 (application/json)
@@ -2793,13 +2821,11 @@ Get all marks for teacher group between two date
                 "token": "foo",
                 "exam_id": "1",
                 "mark_type_id": "1",
-                "semester_id": "1",
                 "student_id": 1,
                 "subject_id": "1",
                 "mark_value_id": "1",
                 "comment": "This is comment",
-                "date": "2015-06-08",
-                "school_year_id": "1"
+                "date": "2015-06-08"
             }
 
 + Response 200 (application/json)
