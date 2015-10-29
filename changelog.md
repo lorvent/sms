@@ -1,5 +1,8 @@
 #ChangeLog
 
+### 29-10-2015
+ * changes in general api methods
+
 ### 28-10-2015
  * add attendances_date to teacher api to get attendances for selected date
  * small change notices in to teacher api

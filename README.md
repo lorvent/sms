@@ -93,57 +93,18 @@ This list use teacher to put behavior to student
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "title": "Good"
-                },
-                {
-                    "id": "2",
-                    "title": "Worse"
-                }
-            ]
-
-## Books [GET /books]
-Get all books
-This method use all roles to select which book they like to issue
-
-+ Request (application/json)
-    + Body
-
             {
-                "token": "foo"
+                "behaviors": [
+                    {
+                        "id": "1",
+                        "title": "Good"
+                    },
+                    {
+                        "id": "2",
+                        "title": "Worse"
+                    }
+                ]
             }
-
-+ Response 200 (application/json)
-    + Body
-
-            [
-                {
-                    "id": "1",
-                    "subject": "History",
-                    "title": "History of world 1",
-                    "author": "Group of authors",
-                    "year": "2015",
-                    "internal": "2015/15",
-                    "publisher": "Book publisher",
-                    "version": "0.2",
-                    "issued": 2,
-                    "quantity": 2
-                },
-                {
-                    "id": "2",
-                    "subject": "English",
-                    "title": "English 2",
-                    "author": "Group of authors",
-                    "year": "2015",
-                    "internal": "2015/15",
-                    "publisher": "Book publisher 2",
-                    "version": "0.1",
-                    "issued": 2,
-                    "quantity": 2
-                }
-            ]
 
 ## Directions [GET /directions]
 Get all directions
@@ -159,18 +120,20 @@ This is list of all directions of school mostly is for admin who create groups o
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "title": "Sociology",
-                    "duration": "3"
-                },
-                {
-                    "id": "2",
-                    "title": "History",
-                    "duration": "4"
-                }
-            ]
+            {
+                "directions": [
+                    {
+                        "id": "1",
+                        "title": "Sociology",
+                        "duration": "3"
+                    },
+                    {
+                        "id": "2",
+                        "title": "History",
+                        "duration": "4"
+                    }
+                ]
+            }
 
 ## Dormitories [GET /dormitories]
 Get all dormitories
@@ -211,18 +174,20 @@ Method for admin to list all dormitory rooms in school
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "dormitory": "Student hotel 1",
-                    "title": "Room 1"
-                },
-                {
-                    "id": "2",
-                    "dormitory": "Student hotel 2",
-                    "title": "Room 1"
-                }
-            ]
+            {
+                "dormitories": [
+                    {
+                        "id": "1",
+                        "dormitory": "Student hotel 1",
+                        "title": "Room 1"
+                    },
+                    {
+                        "id": "2",
+                        "dormitory": "Student hotel 2",
+                        "title": "Room 1"
+                    }
+                ]
+            }
 
 ## Dormitory beds [GET /dormitory_beds]
 Get all dormitory beds
@@ -238,20 +203,22 @@ Method for admin to list all dormitory beds and know which student is in which r
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "dormitory": "Student hotel 1",
-                    "dormitory_room": "Room 1",
-                    "bed": "Bed 1"
-                },
-                {
-                    "id": "2",
-                    "dormitory": "Student hotel 1",
-                    "dormitory_room": "Room 2",
-                    "bed": "Bed 2"
-                }
-            ]
+            {
+                "dormitories": [
+                    {
+                        "id": "1",
+                        "dormitory": "Student hotel 1",
+                        "dormitory_room": "Room 1",
+                        "bed": "Bed 1"
+                    },
+                    {
+                        "id": "2",
+                        "dormitory": "Student hotel 1",
+                        "dormitory_room": "Room 2",
+                        "bed": "Bed 2"
+                    }
+                ]
+            }
 
 ## Mark types [GET /mark_types]
 Get all mark types
@@ -267,16 +234,18 @@ Teachers need this to choose which is mark type
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "title": "Oral"
-                },
-                {
-                    "id": "2",
-                    "title": "Writing"
-                }
-            ]
+            {
+                "mark_type": [
+                    {
+                        "id": "1",
+                        "title": "Oral"
+                    },
+                    {
+                        "id": "2",
+                        "title": "Writing"
+                    }
+                ]
+            }
 
 ## Mark values [GET /mark_values]
 Get all mark values
@@ -292,16 +261,18 @@ Teachers need this to choose which is mark value
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "title": "A"
-                },
-                {
-                    "id": "2",
-                    "title": "B"
-                }
-            ]
+            {
+                "mark_values": [
+                    {
+                        "id": "1",
+                        "title": "A"
+                    },
+                    {
+                        "id": "2",
+                        "title": "B"
+                    }
+                ]
+            }
 
 ## Notice types [GET /notice_types]
 Get all notice types
@@ -408,14 +379,16 @@ Admin list of all semesters
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "title": "First semester",
-                    "start": "2015-06-12",
-                    "end": "2015-12-31"
-                }
-            ]
+            {
+                "semesters": [
+                    {
+                        "id": "1",
+                        "title": "First semester",
+                        "start": "2015-06-12",
+                        "end": "2015-12-31"
+                    }
+                ]
+            }
 
 + Response 500 (application/json)
     + Body
@@ -439,14 +412,16 @@ This used admin for select all subject for selected direction to can add teacher
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "title": "English",
-                    "class": "3",
-                    "order": "2"
-                }
-            ]
+            {
+                "subjects": [
+                    {
+                        "id": "1",
+                        "title": "English",
+                        "class": "3",
+                        "order": "2"
+                    }
+                ]
+            }
 
 + Response 500 (application/json)
     + Body
@@ -468,14 +443,16 @@ List all transportations used for all roles
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "title": "Go to school",
-                    "start": "7:00",
-                    "end": "7:30"
-                }
-            ]
+            {
+                "transportation": [
+                    {
+                        "id": "1",
+                        "title": "Go to school",
+                        "start": "7:00",
+                        "end": "7:30"
+                    }
+                ]
+            }
 
 ## Transportation directions [GET /transportation_directions]
 List all transportation directions for selected transportation used for all roles
@@ -491,12 +468,14 @@ List all transportation directions for selected transportation used for all role
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "name": "Direction name"
-                }
-            ]
+            {
+                "transportation_directions": [
+                    {
+                        "id": "1",
+                        "name": "Direction name"
+                    }
+                ]
+            }
 
 + Response 500 (application/json)
     + Body
@@ -584,13 +563,15 @@ Get all users, all role can use it to send message
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": "1",
-                    "first_name": "First name",
-                    "last_name": "Last name"
-                }
-            ]
+            {
+                "users": [
+                    {
+                        "id": "1",
+                        "first_name": "First name",
+                        "last_name": "Last name"
+                    }
+                ]
+            }
 
 ## Reserve book [POST /reserve_book]
 Reserve book from user, all role can reseve book
@@ -631,15 +612,17 @@ Get all payments for user, student select there payment and parent select for th
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "id": 1,
-                    "amount": "10.5",
-                    "title": "This is title of payment",
-                    "description": "This is description of payment",
-                    "created_at": "2015-06-05 10:55:11"
-                }
-            ]
+            {
+                "payments": [
+                    {
+                        "id": 1,
+                        "amount": "10.5",
+                        "title": "This is title of payment",
+                        "description": "This is description of payment",
+                        "created_at": "2015-06-05 10:55:11"
+                    }
+                ]
+            }
 
 + Response 500 (application/json)
     + Body
@@ -2460,7 +2443,8 @@ Get all exams for teacher group
 
             {
                 "token": "foo",
-                "student_group_id": "1"
+                "student_group_id": "1",
+                "date": "2015-10-10"
             }
 
 + Response 200 (application/json)
@@ -2472,7 +2456,9 @@ Get all exams for teacher group
                         "id": 1,
                         "title": "This is title of exam",
                         "subject": "English",
-                        "date": "2015-06-08"
+                        "subject_id": "1",
+                        "date": "2015-10-10",
+                        "description": "This is a description"
                     }
                 ]
             }
@@ -2496,6 +2482,35 @@ Get all exams for teacher group
                 "subject_id": "1",
                 "title": "This is title",
                 "date": "2015-06-08"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "success": "success"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Edit exam [POST /teacher/edit_exam]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "exam_id": "1",
+                "subject_id": "1",
+                "title": "This is title",
+                "date": "2015-06-08",
+                "description": "This is description"
             }
 
 + Response 200 (application/json)
