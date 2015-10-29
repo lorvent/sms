@@ -2607,6 +2607,7 @@ Get all attendances for teacher group by date
                     {
                         "id": 1,
                         "student": "Student Name",
+                        "student_id": "1",
                         "hour": "2",
                         "justified": "yes",
                         "date": "2015-06-05"
@@ -2641,11 +2642,13 @@ Get all attendances list of hours from timetable for selected date and group
                     {
                         "id": 1,
                         "hour": "1",
+                        "student_id": "1",
                         "subject": "english"
                     },
                     {
                         "id": 2,
                         "hour": "2",
+                        "student_id": "1",
                         "subject": "history"
                     }
                 ]
@@ -2762,9 +2765,13 @@ Get all marks for teacher group between two date
                     {
                         "id": 1,
                         "student_name": "Student Name",
+                        "student_id": "1",
                         "mark_type": "Oral",
+                        "mark_type_id": "1",
                         "mark_value": "A+",
-                        "exam": "Exam 1"
+                        "mark_value_id": "1",
+                        "exam": "Exam 1",
+                        "exam_id": "1"
                     }
                 ]
             }
