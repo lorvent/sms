@@ -2698,12 +2698,11 @@ Get all attendances list of hours from timetable for selected date and group
 
             {
                 "token": "foo",
-                "diary_id": "1",
-                "subject_id": "1",
-                "title": "This is title",
+                "attendance_id": "1",
                 "date": "2015-06-08",
                 "hour": "1",
-                "description": "This is description"
+                "student_id": "1",
+                "justified": "yes"
             }
 
 + Response 200 (application/json)
