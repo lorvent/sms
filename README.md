@@ -2672,7 +2672,7 @@ Get all attendances list of hours from timetable for selected date and group
                 "student_id": "1",
                 "date": "2015-06-08",
                 "hour": "2",
-                "note": "This is note",
+                "student_group_id": "1",
                 "justified": "yes"
             }
 
@@ -2824,7 +2824,8 @@ Get all marks for teacher group between two date
                 "subject_id": "1",
                 "mark_value_id": "1",
                 "comment": "This is comment",
-                "date": "2015-06-08"
+                "date": "2015-06-08",
+                "student_group_id": "1"
             }
 
 + Response 200 (application/json)

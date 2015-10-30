@@ -1,6 +1,9 @@
 #ChangeLog
 
 ### 29-10-2015
+ * changes in teacher api methods
+
+### 29-10-2015
  * changes in general api methods
  * some changes in teacher api and add edit_attendance
 
