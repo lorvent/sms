@@ -2810,6 +2810,47 @@ Get all marks for teacher group between two date
                 "error": "not_valid_data"
             }
 
+## Marks for teacher group for selected date [GET /teacher/marks_date]
+Get all marks for teacher group for selected date
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_group_id": "1",
+                "date": "2015-10-12"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "marks": [
+                    {
+                        "id": 1,
+                        "student_name": "Student Name",
+                        "student_id": "1",
+                        "subject": "Subject",
+                        "subject_id": "1",
+                        "mark_type": "Oral",
+                        "mark_type_id": "1",
+                        "mark_value": "A+",
+                        "mark_value_id": "1",
+                        "exam": "Exam 1",
+                        "exam_id": "1",
+                        "date": "2015-10-12"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
 ## Post mark for student,subject and date [POST /teacher/post_mark]
 
 
@@ -2823,9 +2864,39 @@ Get all marks for teacher group between two date
                 "student_id": 1,
                 "subject_id": "1",
                 "mark_value_id": "1",
-                "comment": "This is comment",
                 "date": "2015-06-08",
                 "student_group_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "success": "success"
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Edit mark [POST /teacher/edit_mark]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "mark_id": "1",
+                "date": "2015-06-08",
+                "exam_id": "1",
+                "student_id": "1",
+                "mark_type_id": "1",
+                "subject_id": "1",
+                "mark_value_id": "1"
             }
 
 + Response 200 (application/json)
@@ -3098,6 +3169,38 @@ Get all diaries for student group and selected date
                         "subject": "English",
                         "date": "2015-02-02",
                         "total_marks": "5"
+                    }
+                ]
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Get exams for subject [GET /teacher/subject_exams]
+
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_group_id": "1",
+                "subject_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "exams": [
+                    {
+                        "id": 1,
+                        "title": "English",
+                        "date": "2015-10-10"
                     }
                 ]
             }

@@ -1,6 +1,9 @@
 #ChangeLog
 
 ### 29-10-2015
+ * add marks_date to teacher api to get marks for selected date
+ * add edit_mark to teacher api to edit mark
+ * add subject_exams to teacher api to get exams for subject
  * changes in teacher api methods
 
 ### 29-10-2015

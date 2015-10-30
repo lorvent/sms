@@ -86,13 +86,16 @@ No - no need token
 |      | GET|HEAD /api/teacher/attendances          |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/attendances_date     |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/attendance_hour_list |      | Closure | Yes       | v1         |          |
-|      | POST /api/teacher/post_attendance          |      | Closure | Yes       | v1         |         |
-|      | POST /api/teacher/edit_attendance          |      | Closure | Yes       | v1         |
-|      | POST /api/teacher/edit_notice              |      | Closure | Yes       | v1         |
+|      | POST /api/teacher/post_attendance          |      | Closure | Yes       | v1         |          |
+|      | POST /api/teacher/edit_attendance          |      | Closure | Yes       | v1         |          |
+|      | POST /api/teacher/edit_notice              |      | Closure | Yes       | v1         |          |
 |      | POST /api/teacher/delete_attendance        |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/marks                |      | Closure | Yes       | v1         |          |
 |      | POST /api/teacher/post_mark                |      | Closure | Yes       | v1         |          |
 |      | POST /api/teacher/delete_mark              |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/teacher/marks_date           |      | Closure | Yes       | v1         |          |
+|      | POST /api/teacher/edit_mark                |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/teacher/subject_exams        |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/students             |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/borrowed_books       |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/diary                |      | Closure | Yes       | v1         |          |
