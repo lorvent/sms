@@ -5,6 +5,7 @@
  * add timetable_day to get timetable in selected day in teacher api (1-Monday, ...7-Sunday)
  * add timetable_day_group to get timetable in selected day and group in teacher api (1-Monday, ...7-Sunday)
  * add subject_list and subject_list_group to get subject list which teacher study in school and selected group
+ * add subject_list to get subject list with teacher to parent and student api
 
 ### 30-10-2015
  * add marks_date to teacher api to get marks for selected date

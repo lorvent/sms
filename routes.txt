@@ -39,6 +39,7 @@ No - no need token
 |      | GET|HEAD /api/borrowed_user_books          |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/student/timetable            |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/student/timetable_day        |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/student/subject_list         |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/student/school_years         |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/student/borrowed_books       |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/student/marks                |      | Closure | Yes       | v1         |          |
@@ -56,6 +57,7 @@ No - no need token
 |      | GET|HEAD /api/parent/school_years          |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/timetable             |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/timetable_day         |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/parent/subject_list          |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/borrowed_books        |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/marks                 |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/attendances           |      | Closure | Yes       | v1         |          |

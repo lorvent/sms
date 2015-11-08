@@ -1056,6 +1056,40 @@ Get timetable classes for student for selected school year and day (day: 1-Monda
                 "error": "not_valid_data"
             }
 
+## List of subjects and teachers for student [GET /student/subject_list]
+Get list of subjects and teachers for student
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "school_year_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "subject_list": {
+                    "id": 4,
+                    "subject": "history",
+                    "teacher": "Teacher 1"
+                },
+                "0": {
+                    "id": 1,
+                    "subject": "english",
+                    "teacher": "Teacher 2"
+                }
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
 ## Borrowed books [GET /student/borrowed_books]
 Get all borrowed books
 
@@ -1585,6 +1619,41 @@ Get timetable classes for parent for selected student, school year and day (day:
                         "subject": "Serbian",
                         "teacher": "Test teacher 2"
                     }
+                }
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## List of subjects and teachers for student [GET /parent/subject_list]
+Get list of subjects and teachers for student
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "school_year_id": "1",
+                "student_user_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "subject_list": {
+                    "id": 4,
+                    "subject": "history",
+                    "teacher": "Teacher 1"
+                },
+                "0": {
+                    "id": 1,
+                    "subject": "english",
+                    "teacher": "Teacher 2"
                 }
             }
 
