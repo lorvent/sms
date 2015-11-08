@@ -1,6 +1,12 @@
 #ChangeLog
 
-### 29-10-2015
+### 08-11-2015
+ * add timetable_day to get timetable in selected day in parent and student api (1-Monday, ...7-Sunday)
+ * add timetable_day to get timetable in selected day in teacher api (1-Monday, ...7-Sunday)
+ * add timetable_day_group to get timetable in selected day and group in teacher api (1-Monday, ...7-Sunday)
+ * add subject_list and subject_list_group to get subject list which teacher study in school and selected group
+
+### 30-10-2015
  * add marks_date to teacher api to get marks for selected date
  * add edit_mark to teacher api to edit mark
  * add subject_exams to teacher api to get exams for subject

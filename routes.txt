@@ -38,6 +38,7 @@ No - no need token
 |      | GET|HEAD /api/reserved_user_books          |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/borrowed_user_books          |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/student/timetable            |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/student/timetable_day        |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/student/school_years         |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/student/borrowed_books       |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/student/marks                |      | Closure | Yes       | v1         |          |
@@ -54,6 +55,7 @@ No - no need token
 |      | GET|HEAD /api/student/school_year_student  |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/school_years          |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/timetable             |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/parent/timetable_day         |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/borrowed_books        |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/marks                 |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/attendances           |      | Closure | Yes       | v1         |          |
@@ -74,8 +76,12 @@ No - no need token
 |      | GET|HEAD /api/parent/fee_details           |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/parent/school_year_child     |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/timetable            |      | Closure | Yes       | v1         |          |
-|      | GET|HEAD /api/teacher/school_years         |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/timetable_group      |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/teacher/timetable_day        |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/teacher/timetable_group_day  |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/teacher/subject_list         |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/teacher/subject_list_group   |      | Closure | Yes       | v1         |          |
+|      | GET|HEAD /api/teacher/school_years         |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/groups               |      | Closure | Yes       | v1         |          |
 |      | GET|HEAD /api/teacher/notices              |      | Closure | Yes       | v1         |          |
 |      | POST /api/teacher/post_notice              |      | Closure | Yes       | v1         |          |

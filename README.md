@@ -984,14 +984,14 @@ in that array have objects that represent subject and teacher that teaches
 
             {
                 "token": "foo",
-                "school_year": "1"
+                "school_year_id": "1"
             }
 
 + Response 200 (application/json)
     + Body
 
-            [
-                {
+            {
+                "timetable": {
                     "1": {
                         "1": {
                             "id": 10,
@@ -1017,7 +1017,44 @@ in that array have objects that represent subject and teacher that teaches
                         }
                     }
                 }
-            ]
+            }
+
+## Timetable for student for day and school year and day [GET /student/timetable_day]
+Get timetable classes for student for selected school year and day (day: 1-Monday,... 7-Sunday)
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "school_year_id": "1",
+                "day_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "timetable": {
+                    "1": {
+                        "id": 10,
+                        "subject": "English",
+                        "teacher": "Test teacher 1"
+                    },
+                    "2": {
+                        "id": 11,
+                        "subject": "Serbian",
+                        "teacher": "Test teacher 2"
+                    }
+                }
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
 
 ## Borrowed books [GET /student/borrowed_books]
 Get all borrowed books
@@ -1032,15 +1069,17 @@ Get all borrowed books
 + Response 200 (application/json)
     + Body
 
-            [
-                {
-                    "title": "Book for mathematics",
-                    "id": "12",
-                    "internal": "12-45",
-                    "author": "Group of authors",
-                    "get": "2015-08-10"
-                }
-            ]
+            {
+                "books": [
+                    {
+                        "title": "Book for mathematics",
+                        "id": "12",
+                        "internal": "12-45",
+                        "author": "Group of authors",
+                        "get": "2015-08-10"
+                    }
+                ]
+            }
 
 ## Attendances for student and dates [GET /student/attendances]
 Get all attendances for student between two dates
@@ -1490,14 +1529,70 @@ in that array have objects that represent subject and teacher that teaches
     + Body
 
             {
-                "student_groups": [
-                    {
-                        "id": 1,
-                        "subject": "English",
-                        "teacher": "Test Teacher",
-                        "class": 2
+                "timetable": {
+                    "1": {
+                        "1": {
+                            "id": 10,
+                            "subject": "English",
+                            "teacher": "Test teacher 1"
+                        },
+                        "2": {
+                            "id": 11,
+                            "subject": "Serbian",
+                            "teacher": "Test teacher 2"
+                        }
+                    },
+                    "2": {
+                        "1": {
+                            "id": 12,
+                            "subject": "History",
+                            "teacher": "Test teacher 2"
+                        },
+                        "2": {
+                            "id": 13,
+                            "subject": "English",
+                            "teacher": "Test teacher 1"
+                        }
                     }
-                ]
+                }
+            }
+
+## Timetable for parent for selected student, school year and day [GET /parent/timetable_day]
+Get timetable classes for parent for selected student, school year and day (day: 1-Monday,... 7-Sunday)
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "school_year_id": "1",
+                "student_user_id": "1",
+                "day_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "timetable": {
+                    "1": {
+                        "id": 10,
+                        "subject": "English",
+                        "teacher": "Test teacher 1"
+                    },
+                    "2": {
+                        "id": 11,
+                        "subject": "Serbian",
+                        "teacher": "Test teacher 2"
+                    }
+                }
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
             }
 
 ## Borrowed books [GET /parent/borrowed_books]
@@ -2168,14 +2263,14 @@ selected school year.
 
             {
                 "token": "foo",
-                "school_year": "1"
+                "school_year_id": "1"
             }
 
 + Response 200 (application/json)
     + Body
 
-            [
-                {
+            {
+                "timetable": {
                     "1": {
                         "1": {
                             "id": 10,
@@ -2201,7 +2296,7 @@ selected school year.
                         }
                     }
                 },
-                [
+                "subject_group": [
                     {
                         "id": 4,
                         "subject": "history",
@@ -2213,7 +2308,7 @@ selected school year.
                         "group": "1 - 3"
                     }
                 ]
-            ]
+            }
 
 ## Timetable for teacher for selected group [GET /teacher/timetable_group]
 Get timetable for teacher with getting selected group id
@@ -2240,8 +2335,8 @@ selected group.
 + Response 200 (application/json)
     + Body
 
-            [
-                {
+            {
+                "timetable": {
                     "1": {
                         "1": {
                             "id": 10,
@@ -2267,7 +2362,7 @@ selected group.
                         }
                     }
                 },
-                [
+                "subject_group": [
                     {
                         "id": 4,
                         "subject": "history",
@@ -2279,7 +2374,149 @@ selected group.
                         "group": "1 - 3"
                     }
                 ]
-            ]
+            }
+
+## Timetable classes for teacher for selected day and school year [GET /teacher/timetable_day]
+Get timetable classes for teacher for selected day and school year.(1-Monday,... 7-Sunday)
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "school_year_id": "1",
+                "day_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "timetable": {
+                    "1": {
+                        "id": 10,
+                        "subject": "english",
+                        "group": "1 - 2"
+                    },
+                    "2": {
+                        "id": 11,
+                        "subject": "serbian",
+                        "group": "2 - 2"
+                    }
+                }
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Timetable for teacher for selected group, day and school year [GET /teacher/timetable_group_day]
+Get timetable classes for teacher for selected group, day and school year.(day: 1-Monday,... 7-Sunday)
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_group_id": "1",
+                "day_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "timetable": {
+                    "1": {
+                        "id": 10,
+                        "subject": "english",
+                        "group": "1 - 2"
+                    },
+                    "2": {
+                        "id": 11,
+                        "subject": "serbian",
+                        "group": "2 - 2"
+                    }
+                }
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Subject list for teacher for school year [GET /teacher/subject_list]
+Get subject list for teacher for school year
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "school_year_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "subject_list": {
+                    "id": 4,
+                    "subject": "history",
+                    "group": "1 - 3"
+                },
+                "0": {
+                    "id": 1,
+                    "subject": "english",
+                    "group": "1 - 3"
+                }
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
+
+## Subject list for teacher for student group [GET /teacher/subject_list_group]
+Get subject list for teacher for student group
+
++ Request (application/json)
+    + Body
+
+            {
+                "token": "foo",
+                "student_group_id": "1"
+            }
+
++ Response 200 (application/json)
+    + Body
+
+            {
+                "subject_list": {
+                    "id": 4,
+                    "subject": "history",
+                    "group": "1 - 3"
+                },
+                "0": {
+                    "id": 1,
+                    "subject": "english",
+                    "group": "1 - 3"
+                }
+            }
+
++ Response 500 (application/json)
+    + Body
+
+            {
+                "error": "not_valid_data"
+            }
 
 ## Groups for teacher [GET /teacher/groups]
 Get all groups for teacher for selected school year
